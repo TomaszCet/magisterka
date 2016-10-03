@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{6}{section.1}
+\contentsline {section}{\numberline {2}Przygotowanie oraz metody pomiaru pr\IeC {\'o}bek}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Wytapianie i ci\IeC {\k e}cie pr\IeC {\'o}bek}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Przygotowanie pr\IeC {\'o}bek do pomiar\IeC {\'o}w oporno\IeC {\'s}ci elektrycznej}{11}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Przygotowanie do pomiar\IeC {\'o}w magnetostrykcji}{14}{subsection.2.3}
+\contentsline {section}{\numberline {3}Metody pomiarowe}{14}{section.3}
+\contentsline {subsection}{\numberline {3.1}Metoda proszkowa Debye'a-Scherrera-Hulla}{14}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Metoda pomiaru oporno\IeC {\'s}ci w\IeC {\l }a\IeC {\'s}ciwej}{17}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Metoda pomiaru magnetostrykcji}{18}{subsection.3.3}
+\contentsline {section}{\numberline {4}Wyniki pomiar\IeC {\'o}w}{19}{section.4}
+\contentsline {subsection}{\numberline {4.1}Wyniki pomiar\IeC {\'o}w dyfrakcyjnych}{19}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Wyniki pomiar\IeC {\'o}w magnetostrykcji}{27}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Wyniki pomiar\IeC {\'o}w oporno\IeC {\'s}ci elektrycznej}{39}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Parametry oporno\IeC {\'s}ci w\IeC {\l }a\IeC {\'s}ciwej badanych pr\IeC {\'o}bek}{45}{subsection.4.4}
+\contentsline {section}{\numberline {5}Podsumoanie}{47}{section.5}
+\contentsline {section}{Dodatek \numberline {A}Tablice technologiczne}{48}{Dodatek.a.A}
+\contentsline {section}{Dodatek \numberline {B}Tabele rentgenograficzne}{51}{Dodatek.a.B}
+\contentsline {section}{Dodatek \numberline {C}Przyk\IeC {\l }adowy plik z danymi z pomiaru opornosci}{56}{Dodatek.a.C}
+\contentsline {section}{Dodatek \numberline {D}Tabele magnetostrykcji}{59}{Dodatek.a.D}
+\contentsline {section}{Dodatek \numberline {E}Tabele przewodnictwa}{63}{Dodatek.a.E}
+\contentsline {section}{Spis tabel}{77}{section*.55}
+\contentsline {section}{Spis rysunk\'ow}{78}{section*.56}

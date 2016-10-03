@@ -1,0 +1,1202 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{polski}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage[titletoc]{appendix}
+\usepackage[nottoc]{tocbibind}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{chngcntr}
+\usepackage{caption}
+\usepackage{rotating}
+
+
+\hypersetup{colorlinks,linkcolor=black,citecolor=blue}
+\captionsetup{margin=10pt, font={small,it}, labelfont=bf}
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\appendixname}{Dodatek}
+
+\numberwithin{equation}{subsection}
+\counterwithin{table}{subsection}
+\counterwithin{figure}{subsection}
+
+\linespread{1.3}
+\widowpenalty=500 %usuwanie wdów
+\clubpenalty=500 %usuwanie bękartów i sierot
+\newcommand{\nit}[1]{\textnormal{#1}}
+
+%\geometry{hmargin={2cm, 2cm}, height=10.0in}
+
+\begin{document}
+
+% =====  STRONA TYTULOWA PRACY MAGISTERSKIEJKIEJ ====
+% ostatnia modyfikacja: 2009/07/01, K. Malarz
+
+\thispagestyle{empty}
+%% ------------------------ NAGLOWEK STRONY ---------------------------------
+\includegraphics[height=37.5mm]{logo.jpg}
+\begin{center}
+  \large
+  \textsf{Wydział Fizyki i Informatyki Stosowanej}
+\end{center}
+\rule{\textwidth}{3pt}
+\rule[2ex]{\textwidth}{1pt}
+\begin{center}
+{\LARGE \bf \textsf{Praca magisterska}}\\
+\vspace{8ex}
+% --------------------------- IMIE I NAZWISKO -------------------------------
+{\bf \Large \textsf{Kamil Kaczmarczyk}}\\
+\vspace{6ex}
+{\sf\small kierunek studiów:} {\bf\small \textsf{fizyka techniczna}}\\
+\vspace{7ex}
+
+%% ------------------------ TYTUL PRACY --------------------------------------
+{\bf \huge \textsf{Magnetostrykcja związków międzymetalicznych}}\\
+\vspace{10ex}
+%% ------------------------ OPIEKUN PRACY ------------------------------------
+{\Large \textsf{Opiekun:} \bf \textsf{prof. dr hab. Jarosław Pszczoła}}\\
+\vspace{6ex}
+{\large \bf \textsf{Kraków, czerwiec 2016}}
+\end{center}
+
+\newpage
+
+\newgeometry{vmargin={2.5cm,2.5cm}, height=10.0in}
+%% =====  TYĹ STRONY TYTUĹOWEJ PRACY MAGISTERSKIEJKIEJ ====
+
+
+Oświadczam, świadomy odpowiedzialności karnej za poświadczenie nieprawdy, że niniejszą pracę magisterską wykonałem
+osobiście i samodzielnie, i że nie korzystałem ze źródeł innych niż wymienione w pracy.
+
+\vspace{5ex}
+\begin{flushright}
+  ..........................................................
+  
+  czytelny podpis
+\end{flushright}
+
+\newpage
+
+%Merytoryczna ocena pracy przez Promotora:
+
+%\newpage
+
+%Merytoryczna ocena pracy przez Recenzenta:
+
+%\newpage
+
+%% ===== Ocena promotora =====
+\newpage
+Merytoryczna ocena pracy popełniona przez Promotora:
+
+%% ===== Ocena recenzenta =====
+\newpage
+Merytoryczna ocena pracy popełniona przez Recenzenta:
+
+%% ===== Spis treści =====
+\newpage
+\begin{center}
+\tableofcontents
+\end{center}
+
+\newpage
+%% ===== Wstęp pracy =====
+\section{Wstęp}
+Historia odkrycia i badań efektu magnetostrykcji sięgają pierwszej połowy XIXw., w którym to ukazała się praca Jamesa Joule'a
+dotycząca obserwacji wydłużeń żelaznych i stalowych prętów poddawanych działaniu pól magnetycznych\cite{joule}. Aż po czasy współczesne
+efekt ten był i jest nadal badany ze względu na rosnące znaczenie i potencjalne zastosowanie materiałów go wykazujących.
+
+Przełom w badaniach dokonał się w latach 80-tych ubiegłego wieku. Marynarka Wojenna USA opracowała tzw. Terfenol-D, związek międzymetaliczny o 
+składzie $\nit{Tb}_{0.3}\nit{Dy}_{0.7}\nit{Fe}_{1.95}$. Jego skład i wynikające z niego właściwości pozwoliły uzyskać o 2-3
+rzędy silniejszą magnetostrykcję w temperaturze pokojowej, niż badane do tej pory stopy i metale\cite{terd}. Poszukiwanie materiałów wykazujących
+tzw. gigantyczną magnetostrykcję jaką obserwuje się w Terfenolu-D, stało się celem wielu zespołów badawczych. Metale ziem rzadkich
+stanowią ciekawą grupę metali, ich właściwości magnetyczne stanowią podstawę do dalszych badań i analiz.
+
+Celem niniejszej pracy, w kontekście badań właściwości magnetostrykcyjnych związków międzymetalicznych, było zbadanie wpływu
+na właściwości strukturalne, magnetyczne oraz elektryczne Terfenolu-D dodatku gadolinu, jako podstawienia za obecne w związku
+inne metale ziem rzadkich, zgodnie ze wzorem strukturalnym $\left(\nit{Tb}_{0.3}\nit{Dy}_{0.7}\right)_{1-x}\nit{Gd}_x\nit{Fe}_{2}$.
+Praca obejmowała syntezę serii związków, analizę rentgenowską struktury uzyskanych próbek oraz badanie ich właściwości obejmujące
+pomiary magnetostrykcji wzdłużnej i poprzecznej oraz pomiary oporności elektrycznej.
+
+\newpage
+\section{Magnetostrykcja metali i związków międzymetalicznych}
+\subsection{Podstawy teoretyczne własności magnetostrykcyjnych}
+  Magnetostrykcja to efekt polegający na zmianie wymiarów ferromagnetyka znajdującego się w zewnętrznym polu magnetycznym. Ideowo
+  obrazuje to poniższy rysunek \ref{img:ms}.
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{../img/ms.png}
+    \caption{Wpływ pola magnetycznego na kształt materiału wykazującego efekt magnetostrykcyjny}
+    \label{img:ms}
+  \end{figure}
+
+  Za właściwości magnetyczne pierwiastków odpowiadają spinowe i orbitalne momenty magnetyczne elektronów, które składają
+  się na moment magnetyczny całego atomu. Oddziaływanie pomiędzy dwoma momentami magnetycznymi, związane jest z energią wymiany
+  zdefiniowaną w następujący sposób:
+  
+  \begin{equation}
+    E_{ex}=-J\vec{m}_1\cdot\vec{m}_2
+    \label{eq:exchange}
+  \end{equation}
+
+  gdzie $\vec{m}_1$ oraz $\vec{m}_1$ to momenty magnetyczne dwóch rozpatrywanych atomów, natomiast $J$ to całka wymiany.
+  
+  W materiałach ferromagnetycznych $J>0$, co oznacza, iż energia wymiany jest najmniejsza, gdy momenty magnetyczne są do siebie
+  równoległe (wynika to z iloczynu skalarnego we wzorze \ref{eq:exchange}). Dążenie do wzajemnego, równoległego ułożenia atomów
+  w ferromagnetykach skutkuje obecnością tzw. domen magnetycznych w tychże materiałach. Obszary przejściowe pomiędzy domenami
+  to tzw. ściany domenowe, w obrębie których ułożenie momentów magnetycznych jest pewną superpozycją orientacji sąsiadujących
+  ze sobą domen. Rotacja domen oraz ruchy ścian domenowych pod wpływem zewnętrznego pola magnetycznego odpowiadają za efekt
+  magnetostrykcji\cite{thoelke}.
+  
+  Istotnym czynnikiem wpływającym na właściwości magnetostrykcyjne materiału jest tzw. anizotropia magnetokrystaliczna oraz
+  związana z nią energia anizotropii magnetokrystalicznej, która określa ilość energii wymaganej do namagnesowania materiału
+  w zależności od danego kierunku. Dla układów kubicznych pierwsze przybliżenie na energię anizotropii magnetokrystalicznej
+  przyjmuje postać \cite{chika}:
+  
+  \begin{equation}
+    E_{m-an}=K_1\left(\alpha_1 \alpha_2 + \alpha_1 \alpha_3 + \alpha_2 + \alpha_3\right) + K_2\alpha_1^2 \alpha_2^2 \alpha_3^2
+  \end{equation}
+  gdzie: $\alpha_1, \alpha_2$ oraz $\alpha_3$ - kosinusy kierunkowe wektora magnetyzacji,
+  
+  \hspace{3ex} $K_1, K_2$ - pierwsza i druga stała anizotropii magnetokrystalicznej (wymiar gęstości energii).
+
+  Ilościowo magnetostrykcję definiuje się jako względne wydłużenie materiału wzdłuż danego kierunku:
+  \begin{equation}
+    \lambda = \frac{\Delta l}{l} \left[\frac{\mu m}{m}\right]
+  \end{equation}
+
+  Parametr $\lambda$ określa zazwyczaj tzw. magnetostrykcję nasycenia. Jest to wartość maksymalna jaką obserwuje się po przyłożeniu
+  zewnętrznego pola magnetycznego, osiąganą dla pewnej wartości pola charakterystycznej dla danego materiału.
+    
+\subsection{Materiały o gigantycznej magnetostrykcji}
+  Pierwsze badania nad materiałami magnetostrykcyjnymi dotyczyły m.in. żelaza \cite{joule} oraz innych metali przejściowych \cite{ms_metali}.
+  Stosowane były już podczas II wojny światowej jako odbiorniki w sonarach łodzi podwodnych. Materiały te osiągły magnetostrykcję
+  nasycenia rzędu $100$ $\times$ $10^{-6}$ \cite{nife}.
+  
+  Lata 60-te ubiegłego wieku przyniosły przełom w badaniach nad materiałami magnetostrykcyjnymi. Zaobserwowano, w wysokiej czystości
+  kryształach metali ziem rzadkich, magnetostrykcję $100-1000$ krotnie silniejszą niż w dotychczas badanych materiałach,
+  sięgającą $7500\ ppm$ dla dysprozu\cite{sc_dys}. Pomiarów tych dokonano w temperaturze $20\ K$. Wynika to z faktu, iż
+  temperatury Curie metali ziem rzadkich, za wyjątkiem gadolinu, znajdują się w zakresie poniżej $100\ K$, co wyklucza możliwość
+  ich zastosowania w temperaturach pokojowych i wyższych.
+  
+  Zastosowanie stopów metal ziemi rzadkiej - metal przejściowy pozwoliło podnieść temperatury Curie związków, przy jednoczesnym, możliwie
+  najbardziej efektywnym, zachowaniu właściwości magnetostrykcyjnych. Najlepsze efekty przyniosły stopy metali ziem rzadkich
+  z żelazem $\nit{RFe}_2$ o strukturze faz Lavesa \cite{high_curie}. 
+  
+\subsection{Terfenol-D}
+  W latach 80-tych Laboratorium Ames, należące do departamentu Energii Stanów Zjednoczonych Ameryki opracowało stop posiadający
+  bardzo silne właściwości magnetostrykcyjne w temperaturach pokojowych. Jego wzór sumaryczny to $\nit{Tb}_{0.3}\nit{Dy}_{0.7}\nit{Fe}_{1.95}$.
+  Stop ten bazował na fazach Lavesa, które tworzyły się z połączenia pierwiastków metali ziem rzadkich - terbu i dysprozu, z żelazem.
+  Jak odnotowano w poprzedniej sekcji - taka struktura i skład pozwoliły podnieść temperaturę Curie stopu. Przełomowym krokiem
+  było natomiast zestawienie struktur $\nit{TbFe}_2$ oraz $\nit{DyFe}_2$ ze sobą. Posiadają one bowiem bardzo silne właściwości
+  magnetostrykcyjne, jednak ich współczynniki anizotropii magnetokrystalicznej są przeciwnego znaku, co wypadkowo obniża energię
+  anizotropii magnetokrystalicznej całego stopu, a zatem energię potrzebną do zmiany jego magnetyzacji.
+  
+  W ten sposób opracowano stop o temperaturze Curie $T_C=375^{\circ}C$ oraz o magnetostrykcji wzdłuż kierunku $\left[111\right]$
+  o wartości $\lambda_{111}=1640ppm$\cite{terd}. Terfenol-D posiada najsilniejsze właściwości magnetystrykcyjne spośród wszystkich
+  znanych stopów metali. Znalazł zastosowanie m.in. sonarach, czujnikach magnetomechanicznych, aktuatorach i transduktorach. 
+  Ograniczeniem związanym z tym materiałem jest jednak jego wysoka kruchość.
+\subsection{Właściwości magnetyczne gadolinu}
+  Metale ziem rzadkich stanowią szczególną grupę pierwiastków. Pod kątem niniejszej rozprawy najistotniejsze są jednak ich właściwości
+  magnetyczne. Zgodnie z regułami Hunda tylko niezapełnione powłoki elektronowe dają swój przyczynek do właściwości magnetycznych
+  pierwiastków. Gadolin posiada następującą konfigurację elektronową:
+  \begin{displaymath}
+    _{64}\nit{Gd}=\left[\nit{Xe}\right]4\nit{f}^7 5\nit{d}^1 6\nit{s}^2
+  \end{displaymath}
+  
+  Ukazuje to bardzo charakterystyczną cechę wielu z metali ziem rzadkich - ekranowanie niezapełnionych podpowłok niższych powłok
+  N i O przez zapełnioną podpowłokę s powłoki P. To głównie niesparowane siedem elektronów podpowłoki $4\nit{f}$ odpowiada
+  za silne właściwości magnetyczne gadolinu, w tym również magnetostrykcyjne.
+  
+  Największy wpływ na anizotropię magnetokrystaliczną ma sprzężenie spin-orbita, które obserwuje się dla wszystkich metali
+  ziem rzadkich za wyjątkiem gadolinu, jako że jego orbitalny moment magnetyczny $\vec{L}$ wynosi 0. Wynika to właśnie
+  z konfiguracji podpowłoki $\nit{4f}$. W związku z tym 
+  dominujący przyczynek do anizotropii magnetokrystalicznej mają oddziaływania spin-spin. Są one jednak znacznie słabsze
+  od sprzężenia L-S obserwowanego dla np. terbu i dysprozu.
+  
+  Ponadto, gadolin jako jedyny spośród metali ziem rzadkich, posiada temperaturę Curie na poziomie temperatury pokojowej.
+  Wynosi ona około $T_C = 294K$. Tym samym gadolin stanowi potencjalnie element niezaburzający struktury terfenolu-D pod 
+  kątem anizotropii magnetokrystalicznej, sam posiada temperaturę Curie w temperaturze pokojowej, a także silne właściwości
+  magnetostrykcyjne.
+
+  \newpage
+\section{Preparatyka i synteza próbek}
+\subsection{Przygotowanie próbek}
+  
+  Do badań przygotowano zestaw siedmiu próbek, których skład zmieniano zgodnie ze wzorem sumarycznym 
+  $\left(\nit{Tb}_{0.27}\nit{Dy}_{0.73}\right)_{1-x}\nit{Gd}_x\nit{Fe}_2$ dla $x=\{$0, 0.2, 0.4, 0.5, 0.6, 0.8, 1$\}$.
+  Poszczególne wzory dla każdej z próbek zamieszczono w tabeli \ref{tab:wzory_chem}.
+  \begin{table}[!ht]
+  \centering
+  \footnotesize
+  \caption{Zestawienie wzorów sumarycznych poszczególnych próbek dla zadanego dodatku gadolinu}
+  \label{tab:wzory_chem}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    Wartość współczynnika $x$ & Wzór sumaryczny \\\hline
+    0 &$\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$ \\\hline
+    0.2 &$\nit{Tb}_{0.184}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$ \\\hline
+    0.4 &$\nit{Tb}_{0.138}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$ \\\hline
+    0.5 &$\nit{Tb}_{0.115}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$ \\\hline
+    0.6 &$\nit{Tb}_{0.092}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$ \\\hline
+    0.8 &$\nit{Tb}_{0.046}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$ \\\hline
+    1 &$\nit{Gd}\nit{Fe}_2$\\\hline
+  \end{tabular}
+\end{table}
+  
+  Celem osiągnięcia możliwie najlepszej dokładności przygotowania próbek zgodnie ze założonym składem chemicznym proces ważenia
+  obejmował:
+  \begin{enumerate}
+    \item Obliczenia stechiometryczne dla docelowej masy próbki równej $7g$.
+    \item Odmierzenie odpowiedniej ilości żelaza, a następnie korektę zakładanych mas pozostałych pierwiastków metali ziem rzadkich
+    do masy całkowitej po uwzględnieniu wagi żelaza.
+    \item Dodanie ok $3\%$ nadwyżki wyjściowej zakładanej wagi metali ziem rzadkich związanej z szacowanym parowaniem w trakcie
+    dalszej obróbki termicznej.
+    \item Odmierzenie obliczonych wartości z zachowaniem tendencji nadmiarowej w przypadku trudności z precyzyjnym odmierzeniem
+    odpowiednich ilości metali.
+    \item Zanotowanie całkowitej wagi odmierzonych próbek celem kontroli ubytku masy w trakcie dalszej obróbki.
+  \end{enumerate}
+
+\subsection{Synteza stopów}
+  Do syntezy stopów międzymetalicznych wykorzystano piec łukowy będący na wyposażeniu laboratorium udostępnionym przez promotora.
+  Schemat pieca łukowego zamieszczono na rysunku \ref{pic:piec}. Pozwolił on na uzyskanie dużej czystości stopów. Ze względu na
+  charakter procesu topienia niemożliwa jest jednak kontrola temperatury topienia oraz wstępnego formowania struktury. Metoda
+  ta jest jednak bardzo atrakcyjna pod kątem prostoty przygotowania próbek oraz szybkości topienia.
+  
+  W skład aparatury wchodzi zasilacz prądowy pozwalający kontrolować łuk elektryczny tworzący się w piecu aby umożliwić dokładniejsze
+  wytopienie próbki.
+  
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../img/schemat_pieca.png}
+    \caption{Schematyczny rysunek pieca łukowego wraz z oznaczeniami\cite{piec}}
+    \label{pic:piec}
+  \end{figure}
+
+  Próbki topione były w atmosferze argonowej. W tym celu, każdorazowo przed wytapianiem próbek, układ był trzykrotnie płukany
+  argonem, a następnie wypełniany tym gazem  do ciśnienia \textbf{UZUPEŁNIENIE}. Każda z próbek wytapiana była dwukrotnie, w 
+  celu zyskania pewności co do całkowitej syntezy pierwiastków.
+  
+  Temperatury topnienia poszczególnych pierwiastków wchodzących w skład badanych stopów:
+  \begin{itemize}
+    \item $\nit{Fe}: T_m = 1538^{\circ}C$
+    \item $\nit{Gd}: T_m = 1312^{\circ}C$
+    \item $\nit{Tb}: T_m = 1356^{\circ}C$
+    \item $\nit{Dy}: T_m = 1412^{\circ}C$
+  \end{itemize}
+
+  Wytopione próbki miały kształt pastylek z widocznymi porami związanymi z parowaniem pierwiastków metali ziem rzadkich. Widoczne
+  są na poniższym zdjęciu przekroju poprzecznego \textbf{ZDJĘCIE PRZEKROJU PRÓBKI}
+
+\subsection{Proces wyżarzania}
+
+  Celem osiągnięcia żądanej struktury faz Lavesa, każdą próbkę wygrzewano przez jedną godzinę, aby procesy dyfuzji aktywowane
+  wysoką temperaturą doprowadziły do ich utworzenia.
+  
+  \begin{minipage}[!ht]{0.5\textwidth}
+    \centering    
+    \includegraphics[width=\textwidth]{../img/faz_tb.png}
+    \captionof{figure}{Diagram fazowy $\nit{Fe-Tb}$\nit{\cite{thoelke}}}
+    \label{fig:phase_tb}
+  \end{minipage}
+  \begin{minipage}[!ht]{0.5\textwidth}
+    \centering    
+    \includegraphics[width=\textwidth]{../img/faz_dy.png}
+    \captionof{figure}{Diagram fazowy $\nit{Fe-Dy}$\nit{\cite{thoelke}}}
+    \label{fig:phase_dy}
+  \end{minipage}
+  
+  \newpage
+  \begin{figure}[!ht]
+    \centering    
+    \includegraphics[width=0.7\textwidth]{../img/faz_gd.png}
+    \captionof{figure}{Diagram fazowy $\nit{Fe-Gd}$\nit{\cite{okamoto}}}
+    \label{fig:phase_gd}
+  \end{figure}
+
+  Uwzględniając zamieszczone na rysunkach \ref{fig:phase_tb}, \ref{fig:phase_dy} oraz \ref{fig:phase_gd} wykresy fazowe, wygrzewanie
+  próbek przeprowadzono w temperaturze $800^{\circ}C$. Pozwoliło to osiągnąć kompromis pomiędzy docelową, żądaną strukturą typu
+  $\nit{RFe}_2$, a możliwie niską temperaturą celem ograniczenia dalszego parowania metali ziem rzadkich.
+  
+  Do wygrzewania próbek wykorzystano piec rurowy wyposażony w precyzyjny kontroler temperatury. Proces wygrzewania uwzględniał:
+  \begin{itemize}
+   \item ok 1h rozgrzewanie układu i próbki z prędkością $15\frac{^{\circ}C}{min}$
+   \item 1h wygrzewanie próbki w temperaturze $800^{\circ}C$
+   \item wychładzanie próbki trwające ok 1 h
+  \end{itemize}
+
+  Wygrzewania dokonywano po wcześniejszym odpompowaniu powietrza pompą próżniową.
+  
+  Podsumowanie wag każdej z próbek, wraz z ubytkami masy związanymi z syntezą i obróbką termiczną prezentuje tabela \ref{tab:masy}.
+  Dość znaczne zróżnicowanie procentowych ubytków mas wynika głównie ze sposobu syntezy stopów. Celem jednorodnego, całkowitego
+  wytopienia wszystkich pierwiastków wytapianie trwało od 1 do 2 minut w zależności od próbki. Odnosząc zaobserwowany ubytek do
+  nadwyżki metali ziem rzadkich jaką dodano na etapie ważenia materiałów należy uwzględnić, że wartości procentowe z tabeli
+  \ref{tab:masy} odnoszą się do całkowitej masy próbki, a nadwyżka $3\%$ tylko do metali ziem rzadkich. Biorąc pod uwagę, iż
+  procentowy udział masowy metali ziem rzadkich w każdej z próbek wyniósł ok $60\%$ oraz zakładając pomijalny, ewentualny ubytek
+  żelaza, można stwierdzić, iż zastosowana nadwyżka pozwoliła skompensować ubytek metali ziem rzadkich spowodowany ich parowaniem.
+  
+\begin{table}[!ht]
+  \centering
+  \footnotesize
+  \caption{Zestawienie wag próbek przed i po wytopieniu oraz wyżarzaniu}
+  \label{tab:masy}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    Wzór & Masa & Masa po wytopieniu & Procentowy ubytek \\
+    sumaryczny & wyjściowa $m_0[g]$  & i wygrzaniu $m[g]$ & masy $\frac{m_0-m}{m_0}\cdot100\%$\\\hline
+    $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$ & 7.12313 & 6.99901 & 1.74\\\hline
+    $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$ & 7.12589 & 7.11297 & 0.18 \\\hline
+    $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$ & 7.12563 & 6.99522 & 1.83 \\\hline
+    $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$ & 7.1372 & 7.12529 & 0.17 \\\hline
+    $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$ & 7.13734 & 7.10965 & 0.39 \\\hline
+    $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$ & 7.12392 & 7.06967 & 0.76 \\\hline
+    $\nit{Gd}\nit{Fe}_2$ & 7.1228 & 7.07486 & 0.67 \\\hline
+  \end{tabular}
+\end{table}
+
+\subsection{Obróbka mechaniczna}
+
+  Do przygotowania próbek do serii pomiarów, każdą z usykanych pastylek pocięto z wykorzystaniem piły diamentowej widocznej
+  na zdjęciu z rysunku \textbf{DODAĆ ZDJĘCIE}. Przygotowanie uwzględniało trzy rodzaje próbek, dla każdego ze stopów:
+  \begin{enumerate}
+   \item Próbka proszkowa do pomiarów rentgenowskich - przygotowana została poprzez ok 40 minutowe ucieranie w moździerzy
+   fragmentów stopu wraz z wysokiej czystości spirytusem. Po tym czasie pozostawiono zawiesinę do odparowania alkoholu i osadzenia
+   się sproszkowanej próbki.
+   \item Płaska próbka w formie plastra do pomiarów magnetostrykcyjnych - ze środkowej części pastylki odcięto fragment o grubości
+   ok $1.5mm$, który poddano następnie dokładnemu, obustronnemu szlifowaniu z wykorzystaniem papieru ściernego o różnym rozmiarze
+   ziaren. Próbki były polerowane, aż do momentu uzyskania gładkiej powierzchni o metalicznym połysku, co miało istotny wpływ
+   na mocowanie aparatury pomiarowej na dalszych etapach badań.
+   \item Prostopadłościenna próbka do pomiarów oporności elektrycznej - za pomocą piły diamentowej wycięto w pierwszej kolejności
+   płaski fragment próbki, a następnie odcięto boczne fragmenty tworząc możliwie długi, wąski i cienki prostopadłościan. Był on
+   następnie dokładnie polerowany tak aby uzyskać gładką, płaską powierzchnię, celem poprawnego mocowania aparatury pomiarowej
+   do dalszych pomiarów.
+  \end{enumerate}
+
+
+
+\newpage
+\section{Metody pomiarowe}
+\subsection{Dyfrakcja rentgenowska}
+  Proszkowa dyfrakcja rentgenowska jest jedną z podstawowych metod badania struktury ciał stałych. Metoda ta bazuje na
+  prawie Bragga, które opisuje zależność pomiędzy kątem padania i odbicia monochromatycznego promieniowania elektromagnetycznego
+  padającego na kryształ, o zadanej strukturze:
+  \begin{equation}
+    n\lambda = 2d\sin\theta
+    \label{eq:bragg}
+  \end{equation}
+  gdzie: $n$ - liczba całkowita oznaczająca rząd ugięcia,
+  
+  \hspace{2ex} $\lambda$ - długość fali promieniowania,
+  
+  \hspace{2ex} $d$ - odległość pomiędzy płaszczyznami odbicia,
+ 
+  \hspace{2ex} $\theta$ - kąt padania i odbicia fali promieniowania.
+  
+  Poniższy rysnek \ref{pic:bragg} ukazuje schematycznie dyfrakcję rentgenowską na sieci krystalicznej z oznaczeniem kąta
+  padania i odbicia $\theta$ oraz odległości międzypłaszczyznowej $d$.
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.35\textwidth]{../img/bragg_my.png}
+    \caption{Schemat dyfrakcji promieniowania na strukturze krystalicznej. Źródło: opracowanie własne}
+    \label{pic:bragg}
+  \end{figure}
+  
+  Do pomiarów dyfrakcyjnych wykorzystano dyfraktometr \textbf{UZUPEŁNIENIE}, wyposażony w lampę molibdenową o długościach fali
+  promieniowania $\lambda_{K\alpha_1}=0.709326$\AA\  oraz $\lambda_{K\alpha_2}= 0.713607$\AA\cite{nist}.
+  
+  Dyfrakcja rentgenowska pozwala na pomiar intensywności pików dyfrakcyjnych w funkcji kąta odbicia promieniowania X. Ze względu
+  na zastosowaną geometrię układu dane wyjściowe stanowiła funkcja $I(2\theta$, dzie $I$ jest mierzonym natężeniem promieniowania,
+  a $2\theta$ podwojonym kontem odbicia promieniowania. Do analizy danych pomiarowych wykorzystano oprogramowanie FullProf,
+  które pozwala na analizę danych dyfrakcyjnych, dopasowanie modelu struktury, symulacje teoretyczne w oparciu o zakładaną 
+  strukturę krystaliczną.
+  
+  Badane stopy krystalizują do faz Lavesa o strukturze typu $\nit{MgCu}_2$, odpowiada ona grupie symetrii przestrzennej
+  $\nit{FD}\bar{3}\nit{M}$\cite{iuc}. Model kubicznej komórki elementarnej umieszczono na rysunku \ref{pic:structure}.
+  
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{../img/struct.png}
+    \caption{Model struktury faz Lavesa typu $\nit{MgCu}_2$ z oznaczeniem atomów metali ziem rzadkich oraz żelaza. Źródło: opracowanie własne}
+    \label{pic:structure}
+  \end{figure}
+
+
+\subsection{Tensomentryczne pomiary magnetostrykcji}
+
+\newpage
+\section{Wyniki pomiarów}
+\subsection{Dyfraktogramy rentgenowskie}
+  Wykresy z rysunków \ref{fig:dif00} - \ref{fig:dif10} prezentują uzyskane dyfraktogramy rentgenowskie dla serii siedmiu przygotowanych
+  próbek. Kolor czerwony oznacza natężenie promieniowania w funkcji kąta $2\theta$ obliczone w programie FullProf, punktami oznaczono
+  dane pomiarowe uzyskane w pomiarach dyfrakcyjnych. Krzywa niebieska stanowi natomiast różnicę pomiędzy natężeniami zmierzonymi
+  oraz wynikającymi z obliczeń celem porównania ich zgodności.
+  
+  Pomiary dyfrakcji prezentują satysfakcjonującą zgodność z obliczeniami teoretycznymi. Pozwala to wnioskować o poprawnym
+  ukształtowaniu się pożądanej struktury faz Lavesa, dla każdej z próbek. Głównym parametrem je opisującym jest stała
+  sieci $a$, którą uzyskano dzięki dopasowaniu parametrów modelu do danych pomiarowych. Zestawienie wartości stałych sieciowych
+  dla poszczególnego stopu zamieszczono w tabeli \ref{tab:stale_sieci}.
+  
+  \begin{table}[!ht]
+    \centering
+    \caption{Zestawienie wartości stałych sieciowych $a$ dla różnej ilości gadolinu w stopie $\left(Tb_{0.27}Dy_{0.73}\right)_{1-x}Gd_xFe_2$}
+    \footnotesize
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+      Domieszka \nit{Gd} & $x=0$ & $x=0.2$ & $x=0.4$ & $x=0.5$ & $x=0.6$ & $x=0.8$ & $x=1$ \\\hline
+      Stała sieci $a$ & 7.34402 & 7.35232 & 7.36449 & 7.37533 & 7.37488 & 7.37556 & 7.40222 \\\hline
+    \end{tabular}
+    \label{tab:stale_sieci}
+  \end{table}
+  
+\newpage
+\newgeometry{hmargin={0.5cm, 0.5cm}, height=10.0in}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx00.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$}
+  \label{fig:dif00}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx02.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$}
+  \label{fig:dif02}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx04.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$}
+  \label{fig:dif04}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx05.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$}
+  \label{fig:dif05}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx06.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$}
+  \label{fig:dif06}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx08.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$}
+  \label{fig:dif08}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[!ht]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/kkx10.jpg}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Gd}\nit{Fe}_2$}
+  \label{fig:dif10}
+\end{sidewaysfigure}
+
+\restoregeometry
+\newgeometry{vmargin={2.5cm,2.5cm}, height=10.0in}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/stale_sieci.pdf}
+  \caption{Wykres parametru sieciowego $a$, objętości komórki elementarnej $V$ oraz objętości atomowej $V_{at}$ w funkcji
+  domieszki gadolinu w stopie $\left(Tb_{0.27}Dy_{0.73}\right)_{1-x}Gd_xFe_2$}
+  \label{fig:stale_sieci}
+\end{figure}
+
+\newpage
+\subsection{Magnetostrykcja poprzeczna i wzdłużna związków międzymetalicznych }%$\left(Tb_{0.27}Dy_{0.73}\right)_{1-x}Gd_xFe_2$}
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x00.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$}
+  \label{fig:mag00}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x00_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\lambda_{V}$ stopu $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag00_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$}
+  \label{tab:x00_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 793.18 & 6.19 & 784.69 & 7.58\\\hline
+    $k$ & -1.403 & 0.018 & -1.190 & 0.019\\\hline
+    $n$ & 2.059 & 0.034 & 1.917 & 0.160\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & 9.48 & 3.60 & 6.7288 & 3.197\\\hline
+    $\lambda_2$ & -552.73 & 6.40 & -554.04 & 8.79\\\hline
+    $k$ & 2.677 & 0.034 & 2.732 & 0.048\\\hline
+    $n$ & 2.384 & 0.0710 & 2.133 & 0.069\\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x02.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$}
+  \label{fig:mag02}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x02_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\lambda_{V}$ stopu $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag02_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+  $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$}
+  \label{tab:x02_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 650.22 & 6.64 & 672.45 & 5.71\\\hline
+    $k$ & 3.200 & 0.050 & 3.174 & 0.045\\\hline
+    $n$ & 1.613 & 0.019 & 1.457 & 0.013\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & 5.06 & 1.67 & 6.89 & 1.54\\\hline
+    $\lambda_2$ & -402.84 & 6.97 & -382.25 & 5.95 \\\hline
+    $k$ & 3.374 & 0.069 & 2.964 & 0.056\\\hline
+    $n$ & 1.799 & 0.046 & 1.878 & 0.047\\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x04.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$}
+  \label{fig:mag04}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x04_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\lambda_{V}$ stopu $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag04_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+  $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$}
+  \label{tab:x04_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 571.86 & 11.02 & 676.55 & 11.09\\\hline
+    $k$ & 4.437 & 0.130 & 5.724 & 0.160\\\hline
+    $n$ & 1.454 & 0.021 & 1.189 & 0.010\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & 3.64 & 1.97 & 15.60 & 2.07\\\hline
+    $\lambda_2$ & -324.07& 16.01 & -410.46 & 25.31 \\\hline
+    $k$ & 4.782 & 0.250 & 6.227 & 0.494\\\hline
+    $n$ & 1.873 & 0.092 & 1.391 & 0.061\\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x05.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$}
+  \label{fig:mag05}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x05_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\lambda_{V}$ stopu $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag05_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+  $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$}
+  \label{tab:x05_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 540.11 & 15.85 & 651.73 & 29.22\\\hline
+    $k$ & 6.243 & 0.293 & 8.432 & 0.651\\\hline
+    $n$ & 1.227 & 0.018 & 1.057 & 0.018\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & -1.09 & 0.74 & 1.19 & 0.68\\\hline
+    $\lambda_2$ & -252.95 & 11.02 & -214.37 & 8.15 \\\hline
+    $k$ & 5.874 & 0.284 & -4.699 & 0.189\\\hline
+    $n$ & 1.780 & 0.057 & 2.006 & 0.066\\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x06.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$}
+  \label{fig:mag06}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x06_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\lambda_{V}$ stopu $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag06_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+  $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$}
+  \label{tab:x06_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 333.60 & 7.48  & 348.57 & 12.07\\\hline
+    $k$ & 4.437 & 0.169 & 4.796 & 0.286\\\hline
+    $n$ & 1.271 & 0.020 & 1.226 & 0.027\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & 2.19 & 0.89 & 2.74 & 0.93\\\hline
+    $\lambda_2$ & -209.52 & 12.01 & -183.19 & 11.13 \\\hline
+    $k$ & 6.175 & 0.481 & 5.099 & 0.420 \\\hline
+    $n$ & 1.369 & 0.055 & 1.434 & 0.068 \\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x08.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$}
+  \label{fig:mag08}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x08_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag08_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+  $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$}
+  \label{tab:x08_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 261.12 & 7.71  & 263.82 & 16.19\\\hline
+    $k$ & 9.622 & 0.455 & 10.027 & 1.020\\\hline
+    $n$ & 1.104 & 0.011 & 1.058 & 0.021\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & -3.15 & 0.27 & 0.18 & 0.29\\\hline
+    $\lambda_2$ & -133.02 & 9.46 & -106.15 & 5.91 \\\hline
+    $k$ & 8.662 & 0.727 & 6.255 & 0.436 \\\hline
+    $n$ & 1.536 & 0.050 & 1.529 & 0.052 \\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x10.pdf}
+  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+  objętościowa $\lambda_{V}$ stopu $\nit{Gd}\nit{Fe}_2$}
+  \label{fig:mag10}
+\end{figure}
+
+\newpage
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{../img/magneto/x10_prime.pdf}
+  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ stopu
+   $\nit{Gd}\nit{Fe}_2$ po polu $H$}
+  \label{fig:mag10_prime}
+\end{figure}
+
+\newpage
+\begin{table}[!ht]
+  \centering
+  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+   $\nit{Gd}\nit{Fe}_2$}
+  \label{tab:x10_co}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_0$ & 68.63 & 1.90  & 64.98 & 1.65\\\hline
+    $k$ & 1.902 & 0.113 & 1.651 & 0.089\\\hline
+    $n$ & 1.169 & 0.047 & 1.242 & 0.052\\\hline
+    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+    \cline{2-5}
+    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+    $\lambda_1$ & 0.34 & 0.42 & 0.96 & 0.67\\\hline
+    $\lambda_2$ & -33.50 & 1.76 & -43.62 & 6.85 \\\hline
+    $k$ & 3.670 & 0.246 & 4.967 & 1.481 \\\hline
+    $n$ & 1.471 & 0.103 & 0.999 & 0.115 \\\hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\begin{appendices}
+N/A  
+\end{appendices}
+
+
+\newpage
+\begin{thebibliography}{10}
+%\addcontentsline{toc}{section}{Literatura}
+ \small
+ \bibitem{joule}
+ J.P. Joule,
+ \emph{On the Effects of Magnetism upon the Dimensions of Iron and Steel Bars}.
+ ``The London, Edinburgh and Dublin Philosophical Magazine and Journal of Science. Third Series''.
+ vol. 30, s. 76–87, 1847. Taylor \& Francis (ang.).
+ 
+ \bibitem{terd}
+ A. E. Clark,
+ \emph{Ferromagnetic Materials}, ed. E. P. Wohlfarth, Amsterdam, 1980. 
+ 
+ \bibitem{thoelke}
+ J. B. Thoelke,
+ \emph{Magnetiziation and Magnetostriction in Highly Magnetostrictive Materials}, Ames Laboratory, Iowa, 1993. 
+ 
+ \bibitem{chika}
+  S. Chikazumi,
+  S. H. Charap,
+  \emph{Physics of Magnetism}, John Wiley and Sons, Nowy Jork, 1964.
+  
+  \bibitem{ms_metali}
+  R. C. Hall,
+  \emph{Single Crystal Anisotropy and Magnetostriction Constants of Several Ferromagnetic Materials Including Alloys of NiFe, SiFe, AlFe, CoNi, and CoFe}, J. Appl. Phys. 30, nr 6, 816-19, 1959.
+  
+  \bibitem{nife}
+  C. M. Davis,
+  H. H. Helms,
+  S. F. Ferebee,
+  \emph{Dynamic Magnetostrictive Properties of Ni-Fe Alloys}, J. Acoust. Soc. Am. 29, nr 4, 431-4, 1957.
+  
+  \bibitem{sc_dys}
+  S. Legvold,
+  J. Alstad,
+  J. Rhyne,
+  \emph{Giant Magnetostriction in Dysprosium and Holmium Single Crystals}, Phys. Rev. Letts. 10, 509, 1963.
+  
+  \bibitem{high_curie}
+  James R. Cullen,
+  Arthur E. Clark,
+  \emph{Magnetostriction and structural distortion in rare-earth intermetallics}, Phys. Rev. B 15, 4510, 1977.
+  
+  \bibitem{piec}
+  M. Onak,
+  J. Pszczoła,
+  \emph{Synthesis of rare earth – transition metal compounds using arc melting},
+  In XXVIII School of Materials Engineering, Kraków – Szczawnica, 2000.
+  
+  \bibitem{okamoto}
+  H. Okamoto,
+  \emph{Supplemental Literature Review of Binary Phase Diagrams: Bi-Ce, Bi-Er, C-Ce, C-La, C-Pr, Cd-I, Cr-Cu, Cu-Er, Er-Sb, F-Sm, F-Yb, and Fe-Gd},
+  Journal of Phase Equilibria and Diffusion, 34:350–362, 2013.
+  
+  \bibitem{nist}
+  \emph{NIST Standard Reference Database 128}, NIST, Physical Measurement Laboratory, 2005.
+  
+  \bibitem{iuc}
+  \emph{International Tables for Crystallography}, Vol. A, Space-group symmetry, 5th online ed., edited by: P. Paufler:
+  International Union of Crystallography, 2006.
+  
+  %% wartości stałej sieci dla GdFe2 7.382022624 A
+  %\bibitem{a_10ref} 
+  %K. N. R. Taylor,
+  %\emph{Intermetallic rare-earth compounds}, Advances in Physics, Volume 20, Issue 87, 1971.
+  
+  %% wartości stałej sieci dla Ter-D 7.3 A
+  \bibitem{a_00ref} 
+  R. F. Quattrone,
+  J. B. Berman,
+  J C. Trovillion,
+  C. A. Feickert,
+  J. M. Kamphaus,
+  S. R. White,
+  V. Giurgiutiu,
+  G. L. Cohen,
+  \emph{Investigation of Terfenol-D for Magnetostrictive Tagging of Fiber-Reinforced Polymer Composites},
+  US Army Corps of Engineers, Engineer Research and Development Center, 2000.
+  
+  
+\end{thebibliography}
+
+\begin{appendices}
+ \section{Tabele dyfrakcji rentgenowskiej}
+ 
+  \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x00}
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+2.596502	&	2	2	0	&	15.701	&	0.245065	&	249.4	&	214.5	&	-34.9	\\\hline
+2.214304	&	3	1	1	&	18.433	&	0.244842	&	381.4	&	405.7	&	24.3	\\\hline
+2.120035	&	2	2	2	&	19.26	&	0.244767	&	53.6	&	73.5	&	19.9	\\\hline
+1.836004	&	4	0	0	&	22.275	&	0.244463	&	3.3	&	11.7	&	8.4	\\\hline
+1.684833	&	3	3	1	&	24.303	&	0.244231	&	17.2	&	2.5	&	-14.7	\\\hline
+1.499091	&	4	2	2	&	27.369	&	0.243837	&	101.2	&	88.8	&	-12.4	\\\hline
+1.413357	&	5	1	1	&	29.065	&	0.243595	&	94.5	&	91.6	&	-2.9	\\\hline
+1.413357	&	3	3	3	&	29.065	&	0.243595	&	31.5	&	30.5	&	-1	\\\hline
+1.298251	&	4	4	0	&	31.707	&	0.243183	&	90.7	&	94.8	&	4.1	\\\hline
+1.241365	&	5	3	1	&	33.201	&	0.242931	&	13.5	&	17.8	&	4.3	\\\hline
+1.161191	&	6	2	0	&	35.567	&	0.242501	&	41.6	&	45.3	&	3.7	\\\hline
+1.119952	&	5	3	3	&	36.923	&	0.242237	&	40.3	&	37.4	&	-2.9	\\\hline
+1.107152	&	6	2	2	&	37.365	&	0.242148	&	16.6	&	16.8	&	0.2	\\\hline
+1.060017	&	4	4	4	&	39.093	&	0.241787	&	1	&	1.1	&	0.1	\\\hline
+1.028368	&	5	5	1	&	40.347	&	0.241512	&	3.5	&	3	&	-0.5	\\\hline
+1.028368	&	7	1	1	&	40.347	&	0.241512	&	3.5	&	3	&	-0.5	\\\hline
+0.981385	&	6	4	2	&	42.37	&	0.241041	&	43.4	&	49.4	&	6	\\\hline
+0.95611	&	5	5	3	&	43.546	&	0.240753	&	21.3	&	21.5	&	0.2	\\\hline
+0.956109	&	7	3	1	&	43.546	&	0.240753	&	42.6	&	42.9	&	0.3	\\\hline
+0.918002	&	8	0	0	&	45.452	&	0.24026	&	11.5	&	11.4	&	-0.1	\\\hline
+0.897214	&	7	3	3	&	46.567	&	0.239958	&	2.1	&	2.9	&	0.8	\\\hline
+0.865501	&	6	6	0	&	48.38	&	0.239441	&	6.4	&	7	&	0.6	\\\hline
+0.865501	&	8	2	2	&	48.38	&	0.239441	&	12.8	&	14.1	&	1.3	\\\hline
+0.848014	&	5	5	5	&	49.444	&	0.239124	&	4.2	&	4.1	&	-0.1	\\\hline
+0.848014	&	7	5	1	&	49.444	&	0.239124	&	25.3	&	24.4	&	-0.9	\\\hline
+0.842416	&	6	6	2	&	49.794	&	0.239017	&	5.1	&	4.6	&	-0.5	\\\hline
+0.821086	&	8	4	0	&	51.18	&	0.238582	&	1.1	&	0.7	&	-0.4	\\\hline
+0.806111	&	7	5	3	&	52.202	&	0.238248	&	2.6	&	2	&	-0.6	\\\hline
+0.806111	&	9	1	1	&	52.202	&	0.238248	&	1.3	&	1	&	-0.3	\\\hline
+0.782875	&	6	6	4	&	53.874	&	0.237679	&	8.1	&	8.2	&	0.1	\\\hline
+0.769862	&	9	3	1	&	54.86	&	0.237328	&	16.2	&	16.8	&	0.6	\\\hline
+0.749546	&	8	4	4	&	56.478	&	0.236728	&	18.3	&	14.6	&	-3.7	\\\hline
+0.738101	&	7	5	5	&	57.435	&	0.236359	&	0.8	&	1.3	&	0.5	\\\hline
+0.738101	&	7	7	1	&	57.435	&	0.236359	&	0.8	&	1.3	&	0.5	\\\hline
+0.738101	&	9	3	3	&	57.435	&	0.236359	&	0.8	&	1.3	&	0.5	\\\hline
+0.72014	&	10	2	0	&	59.007	&	0.235727	&	5.3	&	5.3	&	0	\\\hline
+0.72014	&	8	6	2	&	59.007	&	0.235727	&	10.6	&	10.5	&	-0.1	\\\hline
+0.709973	&	9	5	1	&	59.937	&	0.235338	&	6.5	&	6.3	&	-0.2	\\\hline
+0.709973	&	7	7	3	&	59.937	&	0.235338	&	3.2	&	3.1	&	-0.1	\\\hline
+    \multicolumn{7}{|c|}{ Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$ }\\
+    \multicolumn{7}{|c|}{ $R_p=23.3$ \hspace{0.4cm}$R_{wp}=25.2$\hspace{0.4cm}$R_{exp}=16.8$\hspace{0.4cm}$\chi^2=2.261$  }\\
+    \multicolumn{7}{|c|}{ $a=7.344016(1753) [$\AA$]$ \hspace{0.4cm}$V=396.096(164) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{ Udział procentowy fazy: $100(3.68)\%$ }\\\hline
+  \end{tabular}
+ \end{table}
+ 
+  \newpage
+  \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x02}
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+2.59939	&	2	2	0	&	15.683	&	0.272063	&	235	&	216.1	&	-18.9	\\\hline
+2.216767	&	3	1	1	&	18.412	&	0.2711	&	363.4	&	376.1	&	12.7	\\\hline
+2.122393	&	2	2	2	&	19.238	&	0.270776	&	52.1	&	71.3	&	19.2	\\\hline
+1.838046	&	4	0	0	&	22.25	&	0.269457	&	2.9	&	8.8	&	5.9	\\\hline
+1.686707	&	3	3	1	&	24.275	&	0.268447	&	15.7	&	0	&	-15.7	\\\hline
+1.500758	&	4	2	2	&	27.338	&	0.266722	&	96.2	&	88.9	&	-7.3	\\\hline
+1.414929	&	3	3	3	&	29.032	&	0.265661	&	30.4	&	30.6	&	0.2	\\\hline
+1.414929	&	5	1	1	&	29.032	&	0.265661	&	91.3	&	91.9	&	0.6	\\\hline
+1.299695	&	4	4	0	&	31.67	&	0.263847	&	88.4	&	88.3	&	-0.1	\\\hline
+1.242746	&	5	3	1	&	33.163	&	0.26273	&	12.2	&	15.3	&	3.1	\\\hline
+1.162483	&	6	2	0	&	35.526	&	0.26082	&	39.9	&	42.8	&	2.9	\\\hline
+1.121198	&	5	3	3	&	36.88	&	0.259643	&	39.5	&	38.6	&	-0.9	\\\hline
+1.108384	&	6	2	2	&	37.322	&	0.259246	&	17	&	17.5	&	0.5	\\\hline
+1.061196	&	4	4	4	&	39.048	&	0.257629	&	0.8	&	1.3	&	0.5	\\\hline
+1.029512	&	5	5	1	&	40.301	&	0.256386	&	3.2	&	2.4	&	-0.8	\\\hline
+1.029512	&	7	1	1	&	40.301	&	0.256386	&	3.2	&	2.4	&	-0.8	\\\hline
+0.982477	&	6	4	2	&	42.32	&	0.254258	&	41.9	&	48.1	&	6.2	\\\hline
+0.957173	&	5	5	3	&	43.495	&	0.252944	&	21.1	&	21.3	&	0.2	\\\hline
+0.957173	&	7	3	1	&	43.495	&	0.252944	&	42.3	&	42.5	&	0.2	\\\hline
+0.919023	&	8	0	0	&	45.399	&	0.250691	&	11.5	&	9.2	&	-2.3	\\\hline
+0.898212	&	7	3	3	&	46.512	&	0.249299	&	1.9	&	1.2	&	-0.7	\\\hline
+0.866463	&	6	6	0	&	48.323	&	0.24691	&	6.2	&	6.4	&	0.2	\\\hline
+0.866463	&	8	2	2	&	48.323	&	0.24691	&	12.4	&	12.7	&	0.3	\\\hline
+0.848957	&	5	5	5	&	49.385	&	0.245432	&	4.2	&	4	&	-0.2	\\\hline
+0.848957	&	7	5	1	&	49.385	&	0.245432	&	25.4	&	24.2	&	-1.2	\\\hline
+0.821999	&	8	4	0	&	51.119	&	0.242893	&	0.9	&	1.7	&	0.8	\\\hline
+0.807007	&	7	5	3	&	52.139	&	0.241321	&	2.3	&	1.7	&	-0.6	\\\hline
+0.807007	&	9	1	1	&	52.139	&	0.241321	&	1.2	&	0.9	&	-0.3	\\\hline
+0.783746	&	6	6	4	&	53.809	&	0.238615	&	7.9	&	5.7	&	-2.2	\\\hline
+0.770718	&	9	3	1	&	54.794	&	0.236938	&	16.5	&	16.3	&	-0.2	\\\hline
+0.750379	&	8	4	4	&	56.41	&	0.234049	&	18.9	&	16.5	&	-2.4	\\\hline
+0.720941	&	8	6	2	&	58.935	&	0.22916	&	10.5	&	9.6	&	-0.9	\\\hline
+0.720941	&	10	2	0	&	58.935	&	0.22916	&	5.2	&	4.8	&	-0.4	\\\hline
+0.710763	&	9	5	1	&	59.864	&	0.227236	&	6.9	&	5.7	&	-1.2	\\\hline
+0.710763	&	7	7	3	&	59.864	&	0.227236	&	3.5	&	2.9	&	-0.6	\\\hline
+    \multicolumn{7}{|c|}{ Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$ }\\
+    \multicolumn{7}{|c|}{ $R_p=22.7$ \hspace{0.4cm}$R_{wp}=24.6$\hspace{0.4cm}$R_{exp}=17.5$\hspace{0.4cm}$\chi^2=1.976$  }\\
+    \multicolumn{7}{|c|}{ $a=7.352317(1876) [$\AA$]$ \hspace{0.4cm}$V=397.441(176) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{ Udział procentowy fazy: $100(3.47)\%$ }\\\hline
+  \end{tabular}
+ \end{table}
+ 
+  \newpage
+  \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x04}
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+2.603742	&	2	2	0	&	15.657	&	0.278299	&	217.6	&	209.8	&	-7.8	\\\hline
+2.220478	&	3	1	1	&	18.381	&	0.277025	&	337.8	&	340.3	&	2.5	\\\hline
+2.125946	&	2	2	2	&	19.206	&	0.276595	&	48.5	&	66.7	&	18.2	\\\hline
+1.841123	&	4	0	0	&	22.212	&	0.274847	&	2.7	&	7.7	&	5	\\\hline
+1.689531	&	3	3	1	&	24.234	&	0.273506	&	14.9	&	1.4	&	-13.5	\\\hline
+1.503271	&	4	2	2	&	27.292	&	0.271212	&	91	&	86.9	&	-4.1	\\\hline
+1.417297	&	3	3	3	&	28.982	&	0.269799	&	28.7	&	31.1	&	2.4	\\\hline
+1.417297	&	5	1	1	&	28.982	&	0.269799	&	86.1	&	93.4	&	7.3	\\\hline
+1.301871	&	4	4	0	&	31.616	&	0.267379	&	83.5	&	81.2	&	-2.3	\\\hline
+1.244827	&	5	3	1	&	33.106	&	0.265888	&	12.1	&	14.8	&	2.7	\\\hline
+1.164429	&	6	2	0	&	35.465	&	0.263331	&	38.6	&	43.8	&	5.2	\\\hline
+1.123075	&	5	3	3	&	36.816	&	0.261753	&	37.8	&	41.5	&	3.7	\\\hline
+1.110239	&	6	2	2	&	37.258	&	0.261219	&	15.8	&	15.2	&	-0.6	\\\hline
+1.062973	&	4	4	4	&	38.98	&	0.259046	&	0.9	&	2	&	1.1	\\\hline
+1.031235	&	5	5	1	&	40.23	&	0.257374	&	3.3	&	2.6	&	-0.7	\\\hline
+1.031235	&	7	1	1	&	40.23	&	0.257374	&	3.3	&	2.6	&	-0.7	\\\hline
+0.984122	&	6	4	2	&	42.246	&	0.254502	&	41.6	&	45.1	&	3.5	\\\hline
+0.958775	&	5	5	3	&	43.419	&	0.252725	&	20.6	&	20.3	&	-0.3	\\\hline
+0.958775	&	7	3	1	&	43.419	&	0.252725	&	41.1	&	40.6	&	-0.5	\\\hline
+0.920562	&	8	0	0	&	45.319	&	0.249671	&	11.2	&	13.4	&	2.2	\\\hline
+0.899716	&	7	3	3	&	46.43	&	0.24778	&	2	&	1.7	&	-0.3	\\\hline
+0.867914	&	6	6	0	&	48.237	&	0.244523	&	6.3	&	7	&	0.7	\\\hline
+0.867914	&	8	2	2	&	48.237	&	0.244523	&	12.6	&	13.9	&	1.3	\\\hline
+0.850378	&	5	5	5	&	49.297	&	0.242504	&	4.2	&	4.4	&	0.2	\\\hline
+0.850378	&	7	5	1	&	49.297	&	0.242504	&	25.1	&	26.6	&	1.5	\\\hline
+0.844765	&	6	6	2	&	49.647	&	0.24182	&	5	&	5.3	&	0.3	\\\hline
+0.823375	&	8	4	0	&	51.027	&	0.239023	&	1.2	&	1.5	&	0.3	\\\hline
+0.808358	&	7	5	3	&	52.046	&	0.23686	&	2.6	&	1.9	&	-0.7	\\\hline
+0.808358	&	9	1	1	&	52.046	&	0.23686	&	1.3	&	0.9	&	-0.4	\\\hline
+0.785058	&	6	6	4	&	53.712	&	0.233127	&	8.2	&	7.1	&	-1.1	\\\hline
+0.772009	&	9	3	1	&	54.695	&	0.230804	&	16.5	&	15.5	&	-1	\\\hline
+0.751635	&	8	4	4	&	56.307	&	0.226785	&	18.8	&	16.2	&	-2.6	\\\hline
+0.740159	&	7	5	5	&	57.26	&	0.224279	&	0.9	&	1	&	0.1	\\\hline
+0.740159	&	9	3	3	&	57.26	&	0.224279	&	0.9	&	1	&	0.1	\\\hline
+0.740159	&	7	7	1	&	57.26	&	0.224279	&	0.9	&	1	&	0.1	\\\hline
+0.722148	&	10	2	0	&	58.826	&	0.219936	&	5.6	&	5.7	&	0.1	\\\hline
+0.711952	&	7	7	3	&	59.754	&	0.217223	&	5.2	&	4.6	&	-0.6	\\\hline
+0.711952	&	9	5	1	&	59.754	&	0.217223	&	10.4	&	9.1	&	-1.3	\\\hline
+0.708649	&	6	6	6	&	60.061	&	0.216299	&	0.3	&	0.2	&	-0.1	\\\hline
+0.708649	&	10	2	2	&	60.061	&	0.216299	&	1	&	0.7	&	-0.3	\\\hline
+    \multicolumn{7}{|c|}{ Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$ }\\
+    \multicolumn{7}{|c|}{ $R_p=24.0$ \hspace{0.4cm}$R_{wp}=25.5$\hspace{0.4cm}$R_{exp}=17.8$\hspace{0.4cm}$\chi^2=2.037$}\\
+    \multicolumn{7}{|c|}{ $a=7.364491(1913) [$\AA$]$ \hspace{0.4cm}$V=399.418(180) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{ Udział procentowy fazy: $100(3.42)\%$ }\\\hline
+  \end{tabular}
+ \end{table}
+ 
+  \newpage
+  \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x05}
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+
+    \multicolumn{7}{|c|}{ Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$ }\\
+    \multicolumn{7}{|c|}{ $R_p=22.7$ \hspace{0.4cm}$R_{wp}=24.6$\hspace{0.4cm}$R_{exp}=17.5$\hspace{0.4cm}$\chi^2=1.976$  }\\
+    \multicolumn{7}{|c|}{ $a=7.352317(1876) [$\AA$]$ \hspace{0.4cm}$V=397.441(176) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{ Udział procentowy fazy: $100(3.47)\%$ }\\\hline
+  \end{tabular}
+ \end{table}
+ 
+  \newpage
+  \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x06}
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+
+    \multicolumn{7}{|c|}{ Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$ }\\
+    \multicolumn{7}{|c|}{ $R_p=22.7$ \hspace{0.4cm}$R_{wp}=24.6$\hspace{0.4cm}$R_{exp}=17.5$\hspace{0.4cm}$\chi^2=1.976$  }\\
+    \multicolumn{7}{|c|}{ $a=7.352317(1876) [$\AA$]$ \hspace{0.4cm}$V=397.441(176) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{ Udział procentowy fazy: $100(3.47)\%$ }\\\hline
+  \end{tabular}
+ \end{table}
+ 
+  \newpage
+  \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x08}
+  \scriptsize
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+
+    \multicolumn{7}{|c|}{ Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$ }\\
+    \multicolumn{7}{|c|}{ $R_p=22.7$ \hspace{0.4cm}$R_{wp}=24.6$\hspace{0.4cm}$R_{exp}=17.5$\hspace{0.4cm}$\chi^2=1.976$  }\\
+    \multicolumn{7}{|c|}{ $a=7.352317(1876) [$\AA$]$ \hspace{0.4cm}$V=397.441(176) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{ Udział procentowy fazy: $100(3.47)\%$ }\\\hline
+  \end{tabular}
+ \end{table}
+ 
+ \newpage
+ \begin{table}[!ht]
+  \centering
+  \caption{Wyniki dyfrakcji rentgenowskiej i dopasowania modelu struktury stopu $\nit{GdFe}_2$}
+  \label{tab:dif_x10}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    $d_{hkl}$ [\AA]&	h	k	l&$2\theta$ $\left[ ^{\circ}\right]$&$\Gamma$ $\left[ ^{\circ}\right]$&$I_{obs}$&$I_{calc}$	&$I_{obs}$ - $I_{calc}$	\\\hline
+    2.617090	&	2	2	0	&	15.577	&	0.265300	&	230.2	&	253.5	&	-23.3	\\\hline
+    2.231861	&	3	1	1	&	18.286	&	0.264264	&	408.1	&	397.2	&	10.8	\\\hline
+    2.136845	&	2	2	2	&	19.107	&	0.263915	&	82.9	&	58.8	&	24.2	\\\hline
+    1.850562	&	4	0	0	&	22.098	&	0.262496	&	8.4	&	2.7	&	5.7	\\\hline
+    1.698192	&	3	3	1	&	24.109	&	0.261408	&	2.6	&	15.9	&	-13.3	\\\hline
+    1.510977	&	4	2	2	&	27.150	&	0.259550	&	88.9	&	101.8	&	-12.9	\\\hline
+    1.424563	&	3	3	3	&	28.831	&	0.258407	&	32.7	&	32.4	&	0.3	\\\hline
+    1.424563	&	5	1	1	&	28.831	&	0.258407	&	98.2	&	97.3	&	1.0	\\\hline
+    1.308545	&	4	4	0	&	31.451	&	0.256452	&	91.6	&	93.7	&	-2.1	\\\hline
+    1.251208	&	5	3	1	&	32.932	&	0.255248	&	17.6	&	12.5	&	5.0	\\\hline
+    1.170398	&	6	2	0	&	35.278	&	0.253188	&	46.4	&	41.6	&	4.8	\\\hline
+    1.128832	&	5	3	3	&	36.622	&	0.251918	&	42.0	&	41.1	&	0.9	\\\hline
+    1.115931	&	6	2	2	&	37.061	&	0.251489	&	17.7	&	17.7	&	0.1	\\\hline
+    1.068422	&	4	4	4	&	38.773	&	0.249744	&	1.4	&	0.8	&	0.6	\\\hline
+    1.036522	&	5	5	1	&	40.016	&	0.248403	&	1.5	&	3.3	&	-1.8	\\\hline
+    1.036522	&	7	1	1	&	40.016	&	0.248403	&	1.5	&	3.3	&	-1.8	\\\hline
+    0.989167	&	6	4	2	&	42.020	&	0.246104	&	42.7	&	43.1	&	-0.4	\\\hline
+    0.963690	&	5	5	3	&	43.186	&	0.244684	&	21.7	&	21.5	&	0.2	\\\hline
+    0.963690	&	7	3	1	&	43.186	&	0.244684	&	43.3	&	43.0	&	0.4	\\\hline
+    0.925281	&	8	0	0	&	45.075	&	0.242248	&	13.8	&	11.6	&	2.2	\\\hline
+    0.904328	&	7	3	3	&	46.179	&	0.240743	&	2.3	&	2.0	&	0.4	\\\hline
+    0.872363	&	6	6	0	&	47.975	&	0.238157	&	7.3	&	6.3	&	1.0	\\\hline
+    0.872363	&	8	2	2	&	47.975	&	0.238157	&	14.5	&	12.6	&	1.9	\\\hline
+    0.854738	&	5	5	5	&	49.029	&	0.236557	&	4.2	&	4.2	&	-0.0	\\\hline
+    0.854738	&	7	5	1	&	49.029	&	0.236557	&	25.1	&	25.2	&	-0.1	\\\hline
+    0.849096	&	6	6	2	&	49.376	&	0.236015	&	4.8	&	5.2	&	-0.4	\\\hline
+    0.827596	&	8	4	0	&	50.749	&	0.233805	&	0.8	&	1.0	&	-0.2	\\\hline
+    \multicolumn{7}{|c|}{\small Faza regularna ściennie centrowana $\nit{Fd}\bar{3}\nit{m}$ typu $\nit{MgCu}_2$}\\
+    \multicolumn{7}{|c|}{\small $R_p=22.0$ \hspace{0.4cm}$R_{wp}=24.1$\hspace{0.4cm}$R_{exp}=16.81$\hspace{0.4cm}$\chi^2=2.05$  }\\
+    \multicolumn{7}{|c|}{\small $a=7.34402(175) [$\AA$]$ \hspace{0.4cm}$V=396.096(283) [$\AA$^3]$ }\\
+    \multicolumn{7}{|c|}{\small Udział procentowy fazy: $100(3.25)\%$ }\\\hline
+  \end{tabular}
+
+ \end{table}
+
+ 
+\end{appendices}
+
+
+\newpage
+%\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\newpage
+%\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\end{document}

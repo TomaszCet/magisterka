@@ -1,0 +1,1394 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{polski}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage[titletoc]{appendix}
+\usepackage[nottoc]{tocbibind}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{chngcntr}
+\usepackage{caption}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{standalone}
+
+
+
+\hypersetup{colorlinks,linkcolor=black,citecolor=blue}
+\captionsetup{margin=10pt, font={small,it}, labelfont=bf}
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\appendixname}{Dodatek}
+
+
+
+\numberwithin{equation}{section}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+
+\linespread{1.3}
+\widowpenalty=500 %usuwanie wdów
+\clubpenalty=500 %usuwanie bękartów i sierot
+\newcommand{\nit}[1]{\textnormal{#1}}
+
+%\geometry{hmargin={2cm, 2cm}, height=10.0in}
+
+\begin{document}
+
+% =====  STRONA TYTULOWA PRACY MAGISTERSKIEJKIEJ ====
+% ostatnia modyfikacja: 2009/07/01, K. Malarz
+
+\thispagestyle{empty}
+%% ------------------------ NAGLOWEK STRONY ---------------------------------
+\includegraphics[height=37.5mm]{logo.jpg}
+\begin{center}
+  \large
+  \textsf{Wydział Fizyki i Informatyki Stosowanej}
+\end{center}
+\rule{\textwidth}{3pt}
+\rule[2ex]{\textwidth}{1pt}
+\begin{center}
+{\LARGE \bf \textsf{Praca magisterska}}\\
+\vspace{8ex}
+% --------------------------- IMIE I NAZWISKO -------------------------------
+{\bf \Large \textsf{Tomasz Cetnar}}\\
+\vspace{6ex}
+{\sf\small kierunek studiów:} {\bf\small \textsf{fizyka techniczna}}\\
+\vspace{7ex}
+
+%% ------------------------ TYTUL PRACY --------------------------------------
+{\bf \huge \textsf{Opornoć elektryczna związków ziemia rzadka-metal przejciowy}}\\
+\vspace{10ex}
+%% ------------------------ OPIEKUN PRACY ------------------------------------
+{\Large \textsf{Opiekun:} \bf \textsf{prof. dr hab. Jarosław Pszczoła}}\\
+\vspace{6ex}
+{\large \bf \textsf{Kraków, październik 2016}}
+\end{center}
+
+\newpage
+
+\newgeometry{vmargin={2.5cm,2.5cm}, height=10.0in}
+
+
+%% =================  TYĹ STRONY TYTUĹOWEJ PRACY MAGISTERSKIEJKIEJ ====
+
+
+Oświadczam, świadomy odpowiedzialności karnej za poświadczenie nieprawdy, że niniejszą pracę magisterską wykonałem
+osobiście i samodzielnie, i że nie korzystałem ze źródeł innych niż wymienione w pracy.
+
+\vspace{5ex}
+\begin{flushright}
+  ..........................................................
+  
+  czytelny podpis
+\end{flushright}
+
+\newpage
+
+%Merytoryczna ocena pracy przez Promotora:
+
+%\newpage
+
+%Merytoryczna ocena pracy przez Recenzenta:
+
+%\newpage
+
+%% ========================= Ocena promotora =====
+\newpage
+Merytoryczna ocena pracy popełniona przez Promotora:
+
+%% ======================== Ocena recenzenta =====
+\newpage
+Merytoryczna ocena pracy popełniona przez Recenzenta:
+
+%% ========================== Spis treści =====
+\newpage
+\begin{center}
+\tableofcontents
+\end{center}
+
+\newpage
+%% ======================= Wstęp pracy ==================
+\section{Wstęp}
+
+
+\newpage
+%%=======================Przygotowanie próbek==================
+\section{Przygotowanie oraz metody pomiaru próbek}
+\subsection{Wytapianie i cięcie próbek}
+ 	Niniejsza praca jest pracą typowo doświadczalną, stąd bardzo ważną jej częścią jest przygotowanie próbek do pomiarów i należy dołożyć wszelkich starań by zrobić to jak najlepiej. 
+Wszystkie badane w tej pracy próbki mają wzory stechiometryczne XF${e}_2$, gdzie X to pierwiastek ziemi 
+rzadkiej. W pierwszej kolejności należy obliczyć wartości, jakie potrzebne są do uzyskania pożądanych próbek. 
+W tym celu należy skorzystać z tablic stechiometrycznych i za pomocą mas atomowych badanych pierwiastków i obliczyć 
+jakie masy potrzebne są do otrzymania próbek danej wielkości. W  przypadku tej pracy wszystkie próbki miały masę ok 7g. Do
+ otrzymanej masy pierwiastków metali ziem rzadkich należy dołożyć ok. 5\% obliczonej wartości. Związane jest to ze 
+stosunkowo niską temperaturą parowania metali ziem rzadkich, przez co na późniejszym etapie wytapiania próbek w 
+piecu łukowym część odparowuje, przez co próbka traci na jakości. Mając wyznaczone poszukiwane masy można 
+przejść do zważenia pierwiastków za pomocą bardzo dokładnej wagi.
+Podczas przygotowania próbek używano wagi RADWAG WAAA 40/160/X/1 produkcji polskiej.  Ważne jest by podczas 
+naważania pierwiastków w pomieszczeniu nie było ruchu, a wszelkie drzwi i okna były zamknięte, by nie zaburzać pracy 
+wagi. Z powodu, iż nigdy nie uda się idealnie trafić w wartość wyliczoną, po zważeniu pierwszej próbki należy 
+wprowadzić drobne poprawki- próbka ciągle będzie mieć ok 7g, natomiast będziemy mieć pewność, że wyjdzie 
+poprawnie. Przygotowane w ten sposób próbki można poddać topieniu
+Do topienia próbek użyto pieca łukowego z bezdotykowym zapłonem. Piec ten w całości został zbudowany na 
+Wydziale Fizyki i Informatyki Stosowanej AGH przez Dr. Marka Onaka  w ramach pracy doktorskiej. % Tutaj wrzucić odnosnik do pracy Onaka 
+
+%--------------------schemat i zdjęcie pieca---------- nr 57 w pracy onaka------------------
+\newpage
+\begin{figure}[h]
+\centerline{\includegraphics[scale=0.85]{../img/TCpiecschemat}}
+\caption{Schemat pieca łukowego. 1- chłodnica, 2- rozdzielacz przepływu, 3- stół topniczy, 4- zimny tygiel, 5- elektroda dodatnia??, 6- komora topienia, 7- pierścień uszczelniający, 8- uchwyt elektrody, 9-wyjcie pompy próżniowej, 10- wziernik kontrolny, 11- lampa, 12- pokrywa komory topienia, 13- teflonowe pierścienie ślizgowe, 14- Teflonowa prowadnica kulowa,  15- miech teflonowy, 16- nakrętka żołądziowa, 17- rękojeść uchwytu anody, 18- doprowadzenie wody do chłodzenia, 19- Odpływ wody chłodzącej, 20- pierścień dzielony, 21- manowakuometr, 22- zawór dozujący, 23- doprowadzenie gazu szlachetnego, 24- szybkozłącze śrubowe, 25- pierścień dociskowy, 26-  doprowadzenie wody chłodzącej 2, 27- odpływ wody chłodzącej, 28- zawór bezpieczeństwa, 29- stół.}
+\label{fig:schematPieca}
+\end{figure}
+
+\newpage
+\begin{figure}[h]
+\centerline{\includegraphics[scale=0.1]{../img/piecfoto}}
+\caption{Zdjęcie pieca łukowego z bezdotykowym zapłonem}
+\label{fig:fotoPieca}
+\end{figure}
+ 
+
+Kolejność ułożenia pierwiastków w kuwecie pieca łukowego, która jest 
+jednocześnie anodą nie może być przypadkowa. Na dole powinien znaleźć się metal ziemi rzadkiej, a na nim 
+żelazo, które ma wyższą temperaturę parowania. Sam proces topienia powinien przebiegać bardzo szybko, by 
+czas parowania pierwiastków był jak najmniejszy.  Podnosząc natężenie prądu na zasilaczu zwiększamy 
+łuk, co umożliwia topienie. Przed procesem topienia należy trzykrotnie odpompować powietrze z komory topienia  i przepłukać 
+piec argonem, a następnie uzupełnić jego ilość w piecu do poziomu ciśnienia atmosferycznego. W czasie 
+topienia należy pamiętać o przestrzeganiu zasad BHP. Obowiązkowe jest zakładanie fartucha laboratoryjnego, 
+rękawic oraz okularów ochronnych. Dopiero tak przygotowani możemy przystąpić do topienia. Wymagana jest 
+też obecność drugiej osoby, gdyż piec musi obsługiwać dwoje ludzi. Po przetopieniu próbkę należy wyciągnąć i 
+zważyć, by sprawdzić ile ze zważonego metalu ziemi rzadkiej odparowało. Następnie całą procedurę topienia 
+musimy powtórzyć oraz zmierzyć ostateczną wagę próbki. Topiąc po raz drugi próbkę należy ustawić tak by 
+na górze była strona, którą poprzednim razem próbka była ułożona do spodu. Łatwo to określić, bo obie 
+strony różnią się kolorem oraz powierzchnią. Spodnia strona jest gładsza od górnej. Zmiana ułożenia próbki 
+ułatwia równomierne przetopienie i zapobiega ewentualnemu pozostaniu dużych, nieprzetopionych 
+fragmentów, co trzeba sprawdzić po drugim topieniu. W razie potrzeby topienie należy powtórzyć trzeci raz. 
+Stopioną i zważoną próbkę należy wygrzać przez godzinę w temperaturze $800^{\circ}C$ w specjalnie do tego celu 
+przygotowanym piecu rurowym. W tym miejscu tak naprawdę próbka nabiera właściwej struktury, zwanej 
+fazami Lavesa. %link do sekcji z fazami lawesa
+ Atomy zajmują dokładnie te pozycje, w jakich powinny się znaleźć. Tak przygotowane próbki 
+należy pociąć. W tym celu używa się piły diamentowej chłodzonej wodą \ref{fig:pila}.
+
+\begin{figure}[h]
+\centerline{\includegraphics[scale=1]{../img/pila}}
+\caption{Piła diamentowa chłodzona wodą}
+\label{fig:pila}
+\end{figure}
+
+
+
+Chłodzenie jest potrzebne, ponieważ 
+zarówno piła jak i próbka podczas cięcia mocno się rozgrzewa. Przymocowaną do piły próbkę tnie się 
+trzykrotnie w jednej z płaszczyzn, ponieważ potrzebna jest ona do trzech badań: pomiarów oporności, 
+magnetostrykcji oraz analizy rentgenowskiej. Cięcia można wykonywać niekoniecznie w takiej kolejności, 
+jednak  ważne jest by otrzymane mniejsze próbki były  równoległe, cięcie bez odrywania próbki ułatwia to, 
+gdyż nigdy nie uda się ustawić próbki 
+idealnie w tej samej pozycji. Cięcie jest w wykonywane ręcznie i należy uważać by zbyt mocno nie dociskać 
+tarczy diamentowej do próbki, gdyż grozi to jej zgięciem, a co za tym idzie nierównoległą krawędzią próbki. 
+Nierównoległości można wyrównać w późniejszym czasie, jednak wysiłek i czas włożony w to jest 
+nieporównywalnie większy niż podczas wolniejszego cięcia. Pierwsza część jest zaokrąglona, więc żeby nie 
+tracić niepotrzebnie materiału ucięto ją nieco grubszą: ok 3-4mm od krańca próbki i odłożono do utarcia do 
+dyfrakcji rentgenowskiej. Z pozostałej części odcięto 2 cienkie plastry grubości ok. 1-2mm. Jeden z nich, ten 
+który posiada mniej porów i niedoskonałości wykorzystano do pomiarów magnetostrykcji, natomiast ostatni 
+odcięty kawałek przymocowano do piły w płaszczyźnie poziomej i ponownie bez odrywania przycięto go tak, by 
+miała ona kształt cienkiej belki- nie jest to prostopadłościan, ponieważ nie wykonujemy cięć w miejscu 
+podstaw. Jest to rzeczą zbędną i  żaden sposób nie płya na pomiar. Głównym założeniem badanej metody jest, by długość belki, a w zasadzie jej 
+części, która jest jeszcze prostopadłościanem, był kilkukrotnie większa od jego wymiarów poprzecznych. 
+Docelowo belki miały mieć długość ok. 5-8mm, gdyż takie długości otrzymuje się po przetopieniu próbki 7g, 
+niestety z powodu małych wymiarów i wiążącej się z nimi delikatnością niektóre ukruszyły się przez co są mniejsze. 
+
+Wspomniana długość jest to odległość między wewnętrznymi złączami, które w późniejszym etapie są 
+przymocowywane do próbki i zostanie to opisane w dalszej części pracy. 
+
+
+
+
+
+
+%-----------------------------------Przygotowanie do pomiaru opornoci---------------------------------
+\subsection{Przygotowanie próbek do pomiarów oporności elektrycznej}
+
+Docięte próbki w kształcie belki zostały wyszlifowane papierem ściernym. Należy używać jak najdrobniejszego papieru, 
+ponieważ zbyt gruby, spowoduje  
+sytuację odwrotną do pożądanej: zamiast wypolerować,  grube ziarna papieru ściernego mogą pogłębiać 
+niedoskonałości, a nawet tworzyć nowe, stąd ponownie zalecana jest cierpliwość i dłuższe polerowanie 
+drobniejszym papierem. Podczas przygotowywania próbek do tej pracy korzystano z papieru P-1200 oraz 
+P-2000. Następnym krokiem po szlifowaniu jest zmierzenie wymiarów poprzecznych próbki. Powinny być one jak 
+najmniejsze. Badane próbki miały poprzeczne wymiary w granicach 1.5-2.5mm. Do pomiarów oporności 
+wykorzystuje się metodę czteropunktową. Jest ona bardziej dokładna od zwykłej metody dwupunktowej. W 
+tym celu należy przymocować do próbki 4 druciki- po dwa na krajach próbki, ale jeszcze w miejscu, gdzie 
+próbka ma kształt prostopadłościanu. Pomiędzy przymocowanymi drucikami nie powinno być żadnych ukruszeń, 
+pęknięć ani zwężeń. Wygodnie jest, by druciki przymocowywać w przeciwnych kierunkach. Parę zewnętrzną 
+kierujemy w jedną stronę, natomiast wewnętrzną w drugą. Optymalne ułożenie złącz na próbce przedstawia 
+rysunek \ref{img:druciki}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width =0.8\textwidth]{../img/druciki}
+    \caption{Metoda czterokońcówkowa pomiaru oporności elektrycznej}
+    \label{img:druciki}
+\end{figure}
+
+ W tej pracy stosowano druciki o grubości 0,14mm. Przymocowywane były one do próbki za 
+pomocą spawania grafitem. Jest to bardzo łatwa i tania metoda, pozwalająca jednocześnie na precyzyjną 
+pracę, co jest rzeczą pożądaną w tym przypadku ze względu na małe wymiary próbek. Do spawania za 
+pomocą grafitu wystarczą zasilacz lub akumulator 7V oraz rysiki grafitowe. Przy spawaniu należy uważać, gdyż 
+zarówno próbka jak i rysik nagrzewają się do wysokich temperatur. Mocowanie drucików do próbki można 
+wzmocnić klejem cyjanoakrylowym. Przydaje się to przy mocowaniu próbki ze złączami na aparaturze 
+pomiarowej. Badań dokonuje się w zakresie temperatur od 0K do 800-1000K (w zależności od 
+próbki). Ze względu na tak szeroki zakres temperatur pomiarów dokonuje się na dwóch różnych aparaturach w zakresach 0-300K (pomiary niskotemperaturowe) 
+oraz 300-800K (pomiary wysokotemperaturowe). Po pomiarach niskotemperaturowych procedurę klejenia próbek trzeba 
+przeprowadzić ponownie, gdyż druciki ulegają zniszczeniu lub odklejają się od próbki. W praktyce ciężko umocować 
+druciki idealnie prostopadle do krawędzi próbki, dlatego wylicza się srednią odległosć między drucikami, Przykładowe
+zdjęcie próbki z przymocowanymi drucikami przedstawia rysunek \ref{probkaOpor}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.7\textwidth]{../img/probkaOpor}
+    \caption{Próbka do pomiaru opornosci z przymocowanymi końcówkami}
+    \label{probkaOpor}
+\end{figure}
+
+Schemat aparatury do pomiarów wysokotemperaturowych przedstawia rysunek \ref{img:schematUkl} 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =1.0\textwidth]{../img/schemat}
+    \caption{Schemat układu pomiarowego do badania oporności w wysokich temperaturach: 1 - zasilacz, 2 - komutator, 3 -
+I [mA], 4 - U [mV], 5 - T[K], 6 - piec rurowy, 7 - automatyczny regulator temperatury, 8 - komputer, 9 - pompa próżniowa}
+    \label{img:schematUkl}
+\end{figure}
+
+Aparatura pomiarowa składa się z pieca rurowego [6], w którym umieszczona jest próbka przymocowana do sondy i 
+umieszczona w szklanej rurze, w której panuje próżnia wytwarzana za pomocą pompy próżniowej [9]. Stan próżni jest 
+wymagany, by nie doszło do pęknięć szkła. Z sondy pomiarowej odchodzą trzy pary złącz: prądowe -  przymocowane do próbki 
+(złącza zewnętrzne na rysunku \ref{img:druciki}, napięciowe- para wewnętrzna na tym samym rysunku.Trzecią parą są 
+połączone w jedną wtyczke 
+złącza termopary, której końcówka zamocowana jest przy samej próbce. Należy sprawdzić ułożenie wtyczki. Źle włożona 
+pokazuje temperaturę odwrotnie-maleje gdy piec jest włączony, co uniemożliwia pomiar cykliczny, gdyż program czeka, 
+aż wartoć temperatury będzie większa o minimum $5^{\circ}C$ od poprzednio zanotowanego pomiaru. Każde z tych 
+złącz podpięte jest do osobnego 
+multimetru: wyjście prądowe - multimetr [3],  napięciowe - multimetr [4], termopara - multimetr [5]. Prąd na próbkę podawany jest 
+z zasilacza [1] po przejciu przez komutator [2]. Dane ze wszystkich trzech 
+multimetrów [3,4,5]  przekazywane są do komputera [8]. Za regulację temperatury odpowiada regulator [7].  Napisany w Javie 
+dokładnie do takiego układu pomiarowego program 
+zczytuje i przelicza otrzymane dane. Użytkownik ma możliwosć wykonania pojedynczego pomiaru, jednak z 
+doswiadczalnego punktu widzenia bardziej interesujące jest wykonanie serii pomiarów. Oprogramowanie pozwala na 
+wykonanie pomiarów w okrelonych odstępach czasu lub temperatury. Dokonując pomiarów do tej pracy korzystano, jak 
+już wspomniano z 
+drugiej opcji. Po zakończeniu pomiaru należy zapisać zebrane dane, tzn. temperaturę, napięcie i prąd na próbce, 
+opór, czas (wyorzystywany przy pomiarach w odstępach czasu) oraz zmianę oporu w funkcji temperatury do pliku 
+wynikowego. Obróbki tych danych dokonuje się w programie OriginPro  dostępnym w laboratorium. W pierwszej 
+kolejnosci należy z wartości oporu wyliczyć oporność  przez proste przekształcenie:
+
+  \begin{equation}
+    \rho=R\frac{ab}{l}
+    \label{opornosc}
+  \end{equation}
+
+gdzie $\rho$ to opornosc własciwa, $R$ opór, $a$ i $b$ to wymiary poprzeczne próbki, $l$ odległosc między 
+wewnętrzymi złączami. 
+
+
+ Analogicznego przeszktałcenia należy wykonać z pomiarami nistkotemperaturowymi, a następnie je połączyć. Dane umieszcza się 
+na wykresie. Przykładowa zawartosć pliku wyjsćiowego ukazana jest w dodatku  \ref{plik}.
+
+
+%--------------------------------Przygotowanie do pomiarów magnetostrykcji---------------------------
+\subsection{Przygotowanie do pomiarów magnetostrykcji}
+
+Przygotowanie próbek do pomiarów magnetostrycki, które zostały wykonane dodatkowo w ramach pracy jest całkowicie 
+odmienne. W tym przypadku zależy nam, by uzystać jak największą powierzchnię bez jakichkolwiek nierównosci, pęknięć 
+lub jakichkolwiek innych uszkodzeń. Wymaga to wiele czasu i cierpliwosci, gdyż tak jak wspominano pracę należy 
+wykonać jak najdrobniejszym papierem sciernym. Na wypolerowaną powierzchnię próbki przyklejamy zgodnie z 
+instrukcją producenta tensometr foliowy. Specjalny klej schnie ok. 24 godziny i w tym czasie próbka jest scisnięta w
+imadle. Po upływie tego czasu próbka jest gotowa do przymocowana na sondzie.
+
+%------------------------------Metody pomiarowe------------------------------------------------
+\section{Metody pomiarowe}
+
+
+
+
+%---------------------------------Badania dyfrakcyjne------------------------
+\subsection{Metoda proszkowa Debye'a-Scherrera-Hulla}
+
+Podstawową metodą badania substancji polikrystalicznych jest metoda Debye'a-Scherrera-Hulla (DSH) przy pomocy monochromatycznego
+promieniowania rentgenowskiego. Próbka taka składa się z tysięcy bezładnie ułożonych krystalitów wielkości  0,1 - 10 $\mu$m. Ułożenie
+takie sprawia, że różne są kąty $\theta$ padania promieni wiązki na poszczególne krystality. Refleks uzyskuje się wyłącznie od tych płaszczyzn krystalograficznych krystalitów, które spełniają równanie Bragga:
+
+  \begin{equation}
+    n\lambda = 2d\sin\theta
+    \label{eq:bragg}
+  \end{equation}
+
+gdzie n jest rzędem refleksu, $\lambda$ długością promieniowania, d odległością między płaszczyznami a $\theta$ kątem padania promieni na krystality.
+
+Otrzymane refleksy tworzą kąt $2\theta$ z pierwiotną wiązką i leżą na tworzącej stożka, którego kąt rozwarcia jest 2 razy większy 
+od kąta $2\theta$. Wszystkie refleksy, które mają ten sam rząd i odległość międzypłaszczyznową $d$ układają się na tworzącej 
+jednego stożka. Reflesky od płaszczyzn o innej wartości parametru $d$ układają się na tworzącej innego stożka. Na płaskiej, 
+prostopadłej do padającego promieniowania błonie fotograficznej uzyskuje się jako wynik przecięcia z tworzącymi stożków ciągłe 
+okręgi. Refleksy otrzymane w tej sposób nazywane są debajogramami. Mierząc promienie otrzymanych okręgów i znając odległość 
+próbki od błony fotograficznej uzyskuje się wartość kąta $2\theta$:
+
+   \begin{equation}
+    \tg2\theta= \frac{r}{D}
+    \label{eq:bragg}
+  \end{equation}
+
+gdzie r jest promieniem okręgu debajowskiego a D odległością próbki od błony fotograficznej.
+
+Płaskie błony fotograficzne umożliwiają pomiary refleksów dla $\theta < 30^{\circ}$ oraz refleksów zwrotnych dla
+$\theta > 60^{\circ}$. Ograniczenia takiego nie posiadają kamery cylindryczne, w których błona fotograficzna znajduje się na 
+okręgu o środku w miejscu próbki. średnice kamer cylindrycznych są tak dobierane, by 1mm na błonie fotograficznej odpowiadał 
+$1^{\circ}$ lub $2^{\circ}$. Poddając błonę fotograficzną obróbce fotochemicznej otrzymuje się krzywe czwartego rzędu
+zwane prążkami dyfrakcyjnymi. otrzymane linie mają charakter ciągly, lub nieciągły w zależności od tego, czy w badanej objętości 
+preparatu na którą pada wiązka promieniowania znajduje się wystarczająca liczba krystalitów bądź nie. W przypadku gdy jest ich
+zbyt mało ciągłość można otrzymać przez obrót próbki do pozycji w której będzie większe prawdopodobieństwo uzyskania refleksów od większej liczy krystalitów.
+
+Bieg promieni w goniometrze dyfraktometru polikrystalicznego przedstawia rysunek \ref{biegPromieni}:
+
+\begin{figure}[h]
+\centerline{\includegraphics[scale=1]{../img/biegPromieni}}
+\caption{Biegr promieni w goniometrze: O - ognisko lampy, $S_1$,  $S_2$,  $S_3$ - szczeliny}
+\label{biegPromieni}
+\end{figure}
+
+
+Wiązka promieniowania rentgenowskiego, która wydostaje się z lampy trafia do goniometru, gdzie w specjalnym układzie
+szczelin zostaje uformowana, następnie pada na próbkę, a otrzymane refleksy zostają odprowadzone do licznika ponownie
+przechodząc przez układ szczelin.
+
+Ognisko lampy rentgenowskiej, próbka w kształcie płytki oraz szczelina $S_{2}$ znajdują się na okręgu ogniskowania, który jest 
+zmienny, co wywołane jest przez ruch detektora.
+
+Dużą rolę w tej metodzie odgrywa sposób przygotowania badanego preparatu. Powtarzalne wyniki otrzymuje się dla wielkości 
+krystalitów mniejszych niż $10\mu$m, dlatego odcięty fragment próbki umieszcza się w moździeżu agatowym, zalewa spirytusem
+bezwodnym i uciera. Spirytus zabezpiecza przed ewentualnymi iskrami, które mogą się wytworzyć podczas tarcia niektórych 
+próbek. Ucieranie powinno trwać jak najdłużej, mniej więcej ponad 30 minut. Najlepiej ucierać próbkę przez kilka minut jeszcze po 
+tym gdy patrząc pod swiatło na nią nie widzimy żadnym błyszczących się elementów.Tak utartą próbkę umieszcza się w kuwecie
+pomiarowej dbając o to, by preparat miał płaską i gładką powierzchnię. a następnie na drodze promieni rentgena. 
+
+W pomiarach używano lampy molibdenowej, która wzbudza atomy 
+Itru, przez co na jego  dyfraktogramie widoczne jest dosć wysokie tło. Pomiarów dokonywano w trybie czasowym w 
+zakresie  kątowym $2\theta$  $10^{\circ}-60^{\circ}$ co $0,05^{\circ}$. Cały pomiar trwał ok 3 godzin. 
+
+%---------------------------Metoda pomiaru oporności-------------------------------------------------
+\subsection{Metoda pomiaru oporności właściwej}
+Oporność elekttyczną związków międzymetalicznych, które posiadają uporządkowanie magnetyczne, opisuje reguła
+Matthiesena:
+
+  \begin{equation}
+    \rho(T)=\rho_m(T)\rho{_f}(T)+\rho_0
+    \label{Matthiesen}
+  \end{equation}
+  
+Zgodnie z tą regułą oporność właściwa  $\rho$ takich związków zależy od trzech czynników, którymi są: $\rho_m(T)$ jest opornością
+związaną z rozpraszaniem na momentach magnetycznych, $\rho_f(T)$ rozpraszaniem elektronów związancyh z drganiami sieci 
+krystalicznej, a $\rho_0$ jest opornością resztkową.
+
+Oporność $\rho_f$ dana jest zależnością $Blocha-Grne\"{u}isena$:
+
+  \begin{equation}
+    \rho{_f}(T)=R{_t}\left(\frac{T}{\theta}\right){^5}
+		\int_o^\frac{\theta}{T}
+		\frac{{z^5}dz}{(e^z-1))(1-e^{-z})}
+    \label{ro_wlasciwe_fononowe}
+  \end{equation}
+  
+  gdzie $R_t$ jest stałą temperaturową, a $\theta_D$ temperaturą Debye'a.
+  Zależność tą dla niskich temperatur (T<<$\theta_D$) można zapisać jako:
+  
+  \begin{equation}
+    \rho{_f}(T)=497,5R{_t}\left(\frac{T}{\theta}\right){^5}
+    \label{ro_wlasciwe_fononowe_niskie}
+  \end{equation}
+  
+natomiast dla temperatur wysokich (T>>$\theta_D$) redukuje się do:
+
+  \begin{equation}
+    \rho{_f}(T)=R{_t}\frac{T}{\theta}
+    \label{ro_wlasciwe_fononowe_wysokie}
+  \end{equation}
+  
+Drugi człon $\rho_m$ który wynika z rozpraszania na momentach magnetycznych można zapisać w niskich temperaturach
+(T<<$T_C$) wzorem:
+
+ \begin{equation}
+    \rho_m=A_2T^2+A_1T
+    \label{ro_m_niskie}
+ \end{equation}
+ gdzie $A_2$ i $A_1$ to stałe temperaturowe.
+ 
+W wysokich temperaturach (T>>$T_C$) momenty magnetyczne całkowicie tracą uporządkowanie, stąd stąd $\rho_m$ jest stałą
+niezależną od temperatury.
+
+Łącząc równania \ref{Matthiesen}-\ref{ro_m_niskie} otrzymujemy następujące zależności. Dla temperatur niskich
+(T<<$\theta_D$ i T<<$T_C$) $\rho(T)$ wynosi:
+
+  \begin{equation}
+    \rho(T)=497,5R{_t}\left(\frac{T}{\theta}\right){^5}
+		+A_2T^2+A_1T+\rho_0
+    \label{ro_niskie}
+  \end{equation}
+  
+W wysokich temperaturach (T>>$\theta_D$ i T>>$T_C$) $\rho(T)$ przyjumuje postać:
+
+  \begin{equation}
+    \rho=497,5R{_t}\left(\frac{T}{\theta}\right)
+		+A_3
+    \label{ro_wysokie}
+  \end{equation}
+  
+  gdzie $A_3$ jest stałą temperaturową.
+  
+
+Analiza numeryczna zebranych wyników polega na zamianie oporu $R(T)$ na oporność przez proste przemnożenie przez
+iloczyn wymiarów próbki:
+
+  \begin{equation}
+    \rho(T)=R(T)\frac{ab}{l}
+    \label{opor->opornosc}
+  \end{equation}
+
+  gdzie $a$ i $b$ są długościami boków najmmniejszej ściany próbki a $l$ długością najdłuższej krawędzi próbki.
+Następnie do tak przygotowanych na podstawie wzorów \ref{ro_niskie}-\ref{ro_wysokie} należy w niskich temperaturach
+dopasować wielomian piątego stopnia, natomiast dla temperatur wysokich prostą. Wstawiając współczynniki wyznaczone
+podczas dopasowania do tych wzorów pozwalają na wyznaczenie wartości $R_t$ oraz$\theta_D$. Posiadając wspomniane wielkości
+wyznacza się $\rho_0, \rho_m(T) oraz \rho_f(T)$.
+
+W celu wyznaczenia temperatury Curie $T_C$ badanej serii próbek należy skorzystać z wyliczonej poprzednio oporności
+związanej z rozpraszaniem na momentach magnetycznych $\rho_m(T)$. Obliczając zmianę wartości tego przyczynku 
+w miarę zmiany temperatury $\frac{\Delta\rho_{m}(T)}{\Delta T}$ łatwo zaobserwować, że poniżej temperatury Curie
+$T_C$ zmiany są duże, natomiast powyżej $T_C$ nachylenie jest niewielkie. Dla obu tych przedziałów wyznacza się 
+proste. Temperatura dla której obie wyznaczone proste przecinają się jest szukaną temperaturą Curie $T_C$.
+
+
+%----------------------------Metoda pomiaru magnetostrykcji----------------------------------------------
+\subsection{Metoda pomiaru magnetostrykcji}
+
+Magnetostrykcja to zjawisko, w którym ciało stałe pod wpływem przyłożonego zewnętrznego pola magnetycznego zmienia swoje wymiary. Magnetostrykcja czyli wielkość odkształcenia jakiemu ulega ciało stałe rośnie wraz ze wzrostem 
+wartości pola. W przypadku jednowymiarowym odkształcenie to zapisuje się jako $\lambda=\frac{\Delta l}{l}$. Wielkość odkształcenia rośnie aż do wartości maksymalnej zwanej wartością nasycenia $\lambda_S$. W materiałach polikrystalicznych gdzie ułożenie krystalitów jest przyprzypadkowe dokonuje się pomiarów w dwóch 
+kierunkach. Wyróżnia się magnetostrykcję wzdłużną $\lambda_{||}$ która jest mierzona wzdłuż pola i magnetostrykcję poprzeczną $\lambda_{\perp}$ gdzie mierzona jest wartość magnetostrykcji w kierunku prostopadłym do linii pola
+magnetycznego. W ogólnym przypadku zmianę objętości ciała stałego wywołaną przez zjawisko magnetostrykcji zwaną magnetostrykcją objętościową określa równanie \ref{magneto_objWz}
+
+  \begin{equation}
+ \frac{\Delta V}{V}=\lambda_{||}+2\lambda_{\perp}
+ \label{magneto_objWz}
+ \end{equation}
+  
+ Dodatkowo, gdy $\lambda_{\perp}\neq\lambda_{||}$ zmianie ule także kształt ciała. Zjawisko to nazywane jest magnetostrykcją kształtu i wyznacza się ją za pomocą równania \ref{magneto_ksztWz} 
+ 
+ \begin{equation}
+ \lambda_{t}=\lambda_{||}-2\lambda_{\perp}
+ \label{magneto_ksztWz}
+ \end{equation}
+
+Pomiar magnetostrykcji odbywa się przy pomocy tensometru foliowego oporowego, którego mocowanie omówiono 
+wczeniej. Przygotowaną próbkę przylutowuje się do sondy, która następnie ląduje we wnętrzu elektromagnesu.
+Najważniejsze jest ułożenie próbki wewnątrz: próbka musi leżeć idealnie pododku, gdzie pole jest jednorodne. Oprócz 
+wymogu umiejscowienia próbki w samym srodku elektromagnesu muszą być spełnione dodatkowe warunki. Pomiaru 
+dokonuje się w dwóch kierunkach: tensometru ułożonego równolegle i prostopadle do lini pola, stąd i o to należy
+zadbać. Przyjmuje się, że sonda jest ułożona prostopadle do pola, więc krawędzie tensometru muszą być umieszczone
+równolegle do krawędzi sondy
+
+
+
+jaki rys?
+
+
+
+
+%------------------------------------------------------------------------------------------
+%------------------------------wyniki pomiarów----------------------------------------
+%------------------------------------------------------------------------------------------
+
+
+\section{Wyniki pomiarów}
+
+\subsection{Wyniki pomiarów dyfrakcyjnych}
+
+Poniższe rysunki \ref{Dyrentgen} - \ref{Yrentgen} przedstawiają wyniki pomiarów dyfrakcyjnych wraz z analizą 
+przeprowadzoną przy pomocy programu FullProf. Czerwone punkty to dane pomiarowe, czarna linia to wygenerowany 
+w FullProfie oczekiwany kształt widma. Zielone pionowe kreski oznaczają punkty w których znajdują się piki dyfrakcyjne, 
+a niebieska linia to różnica między natężeniem zmierzonym a wyliczonym przez program.
+
+\newpage
+\newgeometry{hmargin={0.5cm, 0.5cm}, height=10.0in}
+
+\newpage
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/DyFe2rentgen}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Dy}\nit{Fe}_2$}
+  \label{Dyrentgen}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{../img/dif/GdFe2rentgen}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Gd}\nit{Fe}_2$}
+  \label{Gdrentgen}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/HoFe2rentger}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Ho}\nit{Fe}_2$}
+  \label{Horentgen}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/TbFe2rentgen}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}\nit{Fe}_2$}
+  \label{Tbrentgen}
+\end{sidewaysfigure}
+
+\newpage
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{../img/dif/YFe2rentgen}
+  \caption{Dyfraktogram rentgenowski próbki $\nit{Y}\nit{Fe}_2$}
+  \label{Yrentgen}
+\end{sidewaysfigure}
+
+\restoregeometry
+\newgeometry{vmargin={2.5cm,2.5cm}, height=10.0in}
+
+FullProf jako wynik analizy oprócz dopasowania podaje także wiele przydatnych parametrów. Z punktu widzenia tej pracy najciekawsze są stała sieci a oraz objętość komórki elementarnej V wraz z ich niepewnościami. Dane te zostały zebrane w tabeli \ref{parKomTab} 
+oraz na wykresach \ref{aKomorki}-\ref{vKomorki}
+
+
+\begin{table}[!ht]
+  \centering
+  \caption{Parametry komórek elementarnych wraz z niepewnościami}
+  \label{parKomTab}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+Związek	&	Zmierzone a $\AA$	&	Literaturowe a $\AA$	&	Zmierzone V $\AA^3$	\\\hline
+$DyFe_2$	&	7,37557	&	7,36300	&	401,22370	\\\hline
+$GdFe_2$	&	7,39786	&	7,37600	&	404,87256	\\\hline
+$HoFe_2$	&	7,35860	&	7,34100	&	398,46043	\\\hline
+$TbFe_2$	&	7,33366	&	7,30900	&	394,42387	\\\hline
+$YFe_2$	&	7,31398	&	7,28700	&	391,25628	\\\hline
+
+  \end{tabular}
+\end{table}
+
+Do wykresów dopasowano wielomiany drugiego stopnia, a dla parametru a sieci krystalicznej dodano również wartość tego parametru dla Terfenolu D dzięki uprzejmości pani dr Barbary Winiarskiej, oraz porównano je z wartościami literaturowymi zaczerpniętymi z TU JAKIŚ ODNOŚNIK DO LITERATURY.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/aKomorki}
+    \caption{Wartości parametru a sieci krystalicznej badanych próbek}
+    \label{aKomorki}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/vKomorki}
+    \caption{Wartości objętości V badanych próbek}
+    \label{vKomorki}
+\end{figure}
+
+Jak wynika z wykresu \ref{aKomorki} otrzymane wartości parametru sieci krystalicznej a są wyższe od wartości literaturowych. Zaobserwowane zjawisko kontrakcji oraz zgodność wartości dla Terfenolu D wykonanego na tej samej aparaturze świadczą o tym, że badanie zostało przeprowadzone poprawnie, a powstała różnica między wartościami wynika nie z błędu wykonującego, lecz jest spoodoana czynnikami temparaturowymi 
+
+
+\newpage
+%-------------------------------------------------------------------------------------
+%------------------------------wyniki magnetostrykcji----------------------------
+%-------------------------------------------------------------------------------------
+\subsection{Wyniki pomiarów magnetostrykcji}
+
+Poniższe rysunki \ref{Dypoprzeczna} - \ref{YObjetosc} przedstawiają wyniki pomiarów magnetostrykcji wzdłużnej
+ $\lambda_{\parallel}$ i poprzecznej $\lambda_{\perp}$, 
+oraz wyliczone za ich pomocą według wzorów \ref{lambdaksztaltu} i \ref{lambdaobjetosci} wartości magnetostrykcji kształtu $\lambda_{\tau}$  i objętości $\lambda_{V}$.
+ \begin{equation}
+    \lambda_{\tau}=\lambda_{\parallel} - \lambda_{\perp}
+    \label{lambdaksztaltu}
+  \end{equation}
+
+  \begin{equation}
+    \lambda_{\tau}=\lambda_{\parallel} + 2\lambda_{\perp}
+    \label{lambdaobjetosci}
+  \end{equation}
+
+%---------------------------------------Dy-------------------------------------
+ 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Dypoprzeczna}
+    \caption{Wartość magnetostrykcji poprzecznej $\lambda_{\perp}$ $DyFe_2$}
+    \label{Dypoprzeczna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Dywzdluzna}
+    \caption{Wartość magnetostrykcji wzdłużnej $\lambda_{\parallel}$ $DyFe_2$}
+    \label{Dywzdluzna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/DyKsztaltu}
+    \caption{Wartość magnetostrykcji kształru $\lambda_{\tau}$ $DyFe_2$}
+    \label{DyKsztaltu}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/DyObjetosc}
+    \caption{Wartość magnetostrykcji objetości $\lambda_{V}$ $DyFe_2$}
+    \label{DyObjetosc}
+\end{figure}
+
+
+%---------------------------------------Gd-------------------------------------
+
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Gdpoprzeczna}
+    \caption{Wartość magnetostrykcji poprzecznej $\lambda_{\perp}$ $GdFe_2$}
+    \label{Gdpoprzeczna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Gdwzdluzna}
+    \caption{Wartość magnetostrykcji wzdłużnej $\lambda_{\parallel}$ $GdFe_2$}
+    \label{Gdwzdluzna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/GdKsztaltu}
+    \caption{Wartość magnetostrykcji kształru $\lambda_{\tau}$ $GdFe_2$}
+    \label{GdKsztaltu}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/GdObjetosc}
+    \caption{Wartość magnetostrykcji objetości $\lambda_{V}$ $GdFe_2$}
+    \label{GdObjetosc}
+\end{figure}
+
+\newpage
+
+
+
+\clearpage
+\newpage
+%\begin{appendices}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+
+%---------------------------------------Ho-------------------------------------
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Hopoprzeczna}
+    \caption{Wartość magnetostrykcji poprzecznej $\lambda_{\perp}$ $HoFe_2$}
+    \label{Hopoprzeczna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Howzdluzna}
+    \caption{Wartość magnetostrykcji wzdłużnej $\lambda_{\parallel}$ $HoFe_2$}
+    \label{Howzdluzna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/HoKsztaltu}
+    \caption{Wartość magnetostrykcji kształru $\lambda_{\tau}$ $HoFe_2$}
+    \label{HoKsztaltu}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/HoObjetosc}
+    \caption{Wartość magnetostrykcji objetości $\lambda_{V}$ $HoFe_2$}
+    \label{HoObjetosc}
+\end{figure}
+
+%---------------------------------------Tb-------------------------------------
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Tbpoprzeczna}
+    \caption{Wartość magnetostrykcji poprzecznej $\lambda_{\perp}$ $TbFe_2$}
+    \label{Tbpoprzeczna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Tbwzdluzna}
+    \caption{Wartość magnetostrykcji wzdłużnej $\lambda_{\parallel}$ $TbFe_2$}
+    \label{Tbwzdluzna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/TbKsztaltu}
+    \caption{Wartość magnetostrykcji kształru $\lambda_{\tau}$ $TbFe_2$}
+    \label{TbKsztaltu}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/TbObjetosc}
+    \caption{Wartość magnetostrykcji objetości $\lambda_{V}$ $TbFe_2$}
+    \label{TbObjetosc}
+\end{figure}
+
+
+%---------------------------------------Y-------------------------------------
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Ypoprzeczna}
+    \caption{Wartość magnetostrykcji poprzecznej $\lambda_{\perp}$ $YFe_2$}
+    \label{Ypoprzeczna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/Ywzdluzna}
+    \caption{Wartość magnetostrykcji wzdłużnej $\lambda_{\parallel}$ $YFe_2$}
+    \label{Ywzdluzna}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/YKsztaltu}
+    \caption{Wartość magnetostrykcji kształru $\lambda_{\tau}$ $YFe_2$}
+    \label{YKsztaltu}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width =0.9\textwidth]{../img/magneto/YObjetosc}
+    \caption{Wartość magnetostrykcji objetości $\lambda_{V}$ $YFe_2$}
+    \label{YObjetosc}
+\end{figure}
+
+
+%\newpage
+
+\include{opornosc}
+
+\section{Podsumoanie}
+\include{dodatki}
+%  
+%  Do badań przygotowano zestaw siedmiu próbek, których skład zmieniano zgodnie ze wzorem sumarycznym 
+%  $\left(\nit{Tb}_{0.27}\nit{Dy}_{0.73}\right)_{1-x}\nit{Gd}_x\nit{Fe}_2$ dla $x=\{$0, 0.2, 0.4, 0.5, 0.6, 0.8, 1$\}$.
+%  Poszczególne wzory dla każdej z próbek zamieszczono w tabeli \ref{tab:wzory_chem}.
+%
+%  
+%  Celem osiągnięcia możliwie najlepszej dokładności przygotowania próbek zgodnie ze założonym składem chemicznym proces ważenia
+%  obejmował:
+%  \begin{enumerate}
+%    \item Obliczenia stechiometryczne dla docelowej masy próbki równej $7g$.
+%    \item Odmierzenie odpowiedniej ilości żelaza, a następnie korektę zakładanych mas pozostałych pierwiastków metali ziem rzadkich
+%    do masy całkowitej po uwzględnieniu wagi żelaza.
+%    \item Dodanie ok $3\%$ nadwyżki wyjściowej zakładanej wagi metali ziem rzadkich związanej z szacowanym parowaniem w trakcie
+%    dalszej obróbki termicznej.
+%    \item Odmierzenie obliczonych wartości z zachowaniem tendencji nadmiarowej w przypadku trudności z precyzyjnym odmierzeniem
+%    odpowiednich ilości metali.
+%    \item Zanotowanie całkowitej wagi odmierzonych próbek celem kontroli ubytku masy w trakcie dalszej obróbki.
+%  \end{enumerate}
+%
+%\subsection{Synteza stopów}
+%  Do syntezy stopów międzymetalicznych wykorzystano piec łukowy będący na wyposażeniu laboratorium udostępnionym przez promotora.
+%  Schemat pieca łukowego zamieszczono na rysunku \ref{pic:piec}. Pozwolił on na uzyskanie dużej czystości stopów. Ze względu na
+%  charakter procesu topienia niemożliwa jest jednak kontrola temperatury topienia oraz wstępnego formowania struktury. Metoda
+%  ta jest jednak bardzo atrakcyjna pod kątem prostoty przygotowania próbek oraz szybkości topienia.
+%  
+%  W skład aparatury wchodzi zasilacz prądowy pozwalający kontrolować łuk elektryczny tworzący się w piecu aby umożliwić dokładniejsze
+%  wytopienie próbki.
+%  
+%  \begin{figure}[!ht]
+%    \centering
+%    \includegraphics[width=0.6\textwidth]{../img/schemat_pieca.png}
+%    \caption{Schematyczny rysunek pieca łukowego wraz z oznaczeniami\cite{piec}}
+%    \label{pic:piec}
+%  \end{figure}
+%
+%  Próbki topione były w atmosferze argonowej. W tym celu, każdorazowo przed wytapianiem próbek, układ był trzykrotnie płukany
+%  argonem, a następnie wypełniany tym gazem  do ciśnienia \textbf{UZUPEŁNIENIE}. Każda z próbek wytapiana była dwukrotnie, w 
+%  celu zyskania pewności co do całkowitej syntezy pierwiastków.
+%  
+%  Temperatury topnienia poszczególnych pierwiastków wchodzących w skład badanych stopów:
+%  \begin{itemize}
+%    \item $\nit{Fe}: T_m = 1538^{\circ}C$
+%    \item $\nit{Gd}: T_m = 1312^{\circ}C$
+%    \item $\nit{Tb}: T_m = 1356^{\circ}C$
+%    \item $\nit{Dy}: T_m = 1412^{\circ}C$
+%  \end{itemize}
+%
+%  Wytopione próbki miały kształt pastylek z widocznymi porami związanymi z parowaniem pierwiastków metali ziem rzadkich. Widoczne
+%  są na poniższym zdjęciu przekroju poprzecznego \textbf{ZDJĘCIE PRZEKROJU PRÓBKI}
+%
+%\subsection{Proces wyżarzania}
+%
+%  Celem osiągnięcia żądanej struktury faz Lavesa, każdą próbkę wygrzewano przez jedną godzinę, aby procesy dyfuzji aktywowane
+%  wysoką temperaturą doprowadziły do ich utworzenia.
+%  
+%  \begin{minipage}[!ht]{0.5\textwidth}
+%    \centering    
+%    \includegraphics[width=\textwidth]{../img/faz_tb.png}
+%    \captionof{figure}{Diagram fazowy $\nit{Fe-Tb}$\nit{\cite{thoelke}}}
+%    \label{fig:phase_tb}
+%  \end{minipage}
+%  \begin{minipage}[!ht]{0.5\textwidth}
+%    \centering    
+%    \includegraphics[width=\textwidth]{../img/faz_dy.png}
+%    \captionof{figure}{Diagram fazowy $\nit{Fe-Dy}$\nit{\cite{thoelke}}}
+%    \label{fig:phase_dy}
+%  \end{minipage}
+%  
+%  \newpage
+%  \begin{figure}[!ht]
+%    \centering    
+%    \includegraphics[width=0.7\textwidth]{../img/faz_gd.png}
+%    \captionof{figure}{Diagram fazowy $\nit{Fe-Gd}$\nit{\cite{okamoto}}}
+%    \label{fig:phase_gd}
+%  \end{figure}
+%
+%  Uwzględniając zamieszczone na rysunkach \ref{fig:phase_tb}, \ref{fig:phase_dy} oraz \ref{fig:phase_gd} wykresy fazowe, wygrzewanie
+%  próbek przeprowadzono w temperaturze $800^{\circ}C$. Pozwoliło to osiągnąć kompromis pomiędzy docelową, żądaną strukturą typu
+%  $\nit{RFe}_2$, a możliwie niską temperaturą celem ograniczenia dalszego parowania metali ziem rzadkich.
+%  
+%  Do wygrzewania próbek wykorzystano piec rurowy wyposażony w precyzyjny kontroler temperatury. Proces wygrzewania uwzględniał:
+%  \begin{itemize}
+%   \item ok 1h rozgrzewanie układu i próbki z prędkością $15\frac{^{\circ}C}{min}$
+%   \item 1h wygrzewanie próbki w temperaturze $800^{\circ}C$
+%   \item wychładzanie próbki trwające ok 1 h
+%  \end{itemize}
+%
+%  Wygrzewania dokonywano po wcześniejszym odpompowaniu powietrza pompą próżniową.
+%  
+%  Podsumowanie wag każdej z próbek, wraz z ubytkami masy związanymi z syntezą i obróbką termiczną prezentuje tabela \ref{tab:masy}.
+%  Dość znaczne zróżnicowanie procentowych ubytków mas wynika głównie ze sposobu syntezy stopów. Celem jednorodnego, całkowitego
+%  wytopienia wszystkich pierwiastków wytapianie trwało od 1 do 2 minut w zależności od próbki. Odnosząc zaobserwowany ubytek do
+%  nadwyżki metali ziem rzadkich jaką dodano na etapie ważenia materiałów należy uwzględnić, że wartości procentowe z tabeli
+%  \ref{tab:masy} odnoszą się do całkowitej masy próbki, a nadwyżka $3\%$ tylko do metali ziem rzadkich. Biorąc pod uwagę, iż
+%  procentowy udział masowy metali ziem rzadkich w każdej z próbek wyniósł ok $60\%$ oraz zakładając pomijalny, ewentualny ubytek
+%  żelaza, można stwierdzić, iż zastosowana nadwyżka pozwoliła skompensować ubytek metali ziem rzadkich spowodowany ich parowaniem.
+%  
+%\begin{table}[!ht]
+%  \centering
+%  \footnotesize
+%  \caption{Zestawienie wag próbek przed i po wytopieniu oraz wyżarzaniu}
+%  \label{tab:masy}
+%  \begin{tabular}{|c|c|c|c|}
+%    \hline
+%    Wzór & Masa & Masa po wytopieniu & Procentowy ubytek \\
+%    sumaryczny & wyjściowa $m_0[g]$  & i wygrzaniu $m[g]$ & masy $\frac{m_0-m}{m_0}\cdot100\%$\\\hline
+%    $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$ & 7.12313 & 6.99901 & 1.74\\\hline
+%    $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$ & 7.12589 & 7.11297 & 0.18 \\\hline
+%    $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$ & 7.12563 & 6.99522 & 1.83 \\\hline
+%    $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$ & 7.1372 & 7.12529 & 0.17 \\\hline
+%    $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$ & 7.13734 & 7.10965 & 0.39 \\\hline
+%    $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$ & 7.12392 & 7.06967 & 0.76 \\\hline
+%    $\nit{Gd}\nit{Fe}_2$ & 7.1228 & 7.07486 & 0.67 \\\hline
+%  \end{tabular}
+%\end{table}
+%
+%\subsection{Obróbka mechaniczna}
+%
+%  Do przygotowania próbek do serii pomiarów, każdą z usykanych pastylek pocięto z wykorzystaniem piły diamentowej widocznej
+%  na zdjęciu z rysunku \textbf{DODAĆ ZDJĘCIE}. Przygotowanie uwzględniało trzy rodzaje próbek, dla każdego ze stopów:
+%  \begin{enumerate}
+%   \item Próbka proszkowa do pomiarów rentgenowskich - przygotowana została poprzez ok 40 minutowe ucieranie w moździerzy
+%   fragmentów stopu wraz z wysokiej czystości spirytusem. Po tym czasie pozostawiono zawiesinę do odparowania alkoholu i osadzenia
+%   się sproszkowanej próbki.
+%   \item Płaska próbka w formie plastra do pomiarów magnetostrykcyjnych - ze środkowej części pastylki odcięto fragment o grubości
+%   ok $1.5mm$, który poddano następnie dokładnemu, obustronnemu szlifowaniu z wykorzystaniem papieru ściernego o różnym rozmiarze
+%   ziaren. Próbki były polerowane, aż do momentu uzyskania gładkiej powierzchni o metalicznym połysku, co miało istotny wpływ
+%   na mocowanie aparatury pomiarowej na dalszych etapach badań.
+%   \item Prostopadłościenna próbka do pomiarów oporności elektrycznej - za pomocą piły diamentowej wycięto w pierwszej kolejności
+%   płaski fragment próbki, a następnie odcięto boczne fragmenty tworząc możliwie długi, wąski i cienki prostopadłościan. Był on
+%   następnie dokładnie polerowany tak aby uzyskać gładką, płaską powierzchnię, celem poprawnego mocowania aparatury pomiarowej
+%   do dalszych pomiarów.
+%  \end{enumerate}
+%
+%
+%
+%\newpage
+%\section{Metody pomiarowe}
+%\subsection{Dyfrakcja rentgenowska}
+%  Proszkowa dyfrakcja rentgenowska jest jedną z podstawowych metod badania struktury ciał stałych. Metoda ta bazuje na
+%  prawie Bragga, które opisuje zależność pomiędzy kątem padania i odbicia monochromatycznego promieniowania elektromagnetycznego
+%  padającego na kryształ, o zadanej strukturze:
+%  \begin{equation}
+%    n\lambda = 2d\sin\theta
+%    \label{eq:bragg}
+%  \end{equation}
+%  gdzie: $n$ - liczba całkowita oznaczająca rząd ugięcia,
+%  
+%  \hspace{2ex} $\lambda$ - długość fali promieniowania,
+%  
+%  \hspace{2ex} $d$ - odległość pomiędzy płaszczyznami odbicia,
+% 
+%  \hspace{2ex} $\theta$ - kąt padania i odbicia fali promieniowania.
+%  
+%  Poniższy rysnek \ref{pic:bragg} ukazuje schematycznie dyfrakcję rentgenowską na sieci krystalicznej z oznaczeniem kąta
+%  padania i odbicia $\theta$ oraz odległości międzypłaszczyznowej $d$.
+%  \begin{figure}[!ht]
+%    \centering
+%    \includegraphics[width=0.35\textwidth]{../img/bragg_my.png}
+%    \caption{Schemat dyfrakcji promieniowania na strukturze krystalicznej. Źródło: opracowanie własne}
+%    \label{pic:bragg}
+%  \end{figure}
+%  
+%  Do pomiarów dyfrakcyjnych wykorzystano dyfraktometr \textbf{UZUPEŁNIENIE}, wyposażony w lampę molibdenową o długościach fali
+%  promieniowania $\lambda_{K\alpha_1}=0.709326$\AA\  oraz $\lambda_{K\alpha_2}= 0.713607$\AA\cite{nist}.
+%  
+%  Dyfrakcja rentgenowska pozwala na pomiar intensywności pików dyfrakcyjnych w funkcji kąta odbicia promieniowania X. Ze względu
+%  na zastosowaną geometrię układu dane wyjściowe stanowiła funkcja $I(2\theta$, dzie $I$ jest mierzonym natężeniem promieniowania,
+%  a $2\theta$ podwojonym kontem odbicia promieniowania. Do analizy danych pomiarowych wykorzystano oprogramowanie FullProf,
+%  które pozwala na analizę danych dyfrakcyjnych, dopasowanie modelu struktury, symulacje teoretyczne w oparciu o zakładaną 
+%  strukturę krystaliczną.
+%  
+%  Badane stopy krystalizują do faz Lavesa o strukturze typu $\nit{MgCu}_2$, odpowiada ona grupie symetrii przestrzennej
+%  $\nit{FD}\bar{3}\nit{M}$\cite{iuc}. Model kubicznej komórki elementarnej umieszczono na rysunku \ref{pic:structure}.
+%  
+%  \begin{figure}[!ht]
+%    \centering
+%    \includegraphics[width = 0.5\textwidth]{../img/struct.png}
+%    \caption{Model struktury faz Lavesa typu $\nit{MgCu}_2$ z oznaczeniem atomów metali ziem rzadkich oraz żelaza. Źródło: opracowanie własne}
+%    \label{pic:structure}
+%  \end{figure}
+%
+%
+%\subsection{Tensomentryczne pomiary magnetostrykcji}
+%
+%\newpage
+%\section{Wyniki pomiarów}
+%\subsection{Dyfraktogramy rentgenowskie}
+%  Wykresy z rysunków \ref{fig:dif00} - \ref{fig:dif10} prezentują uzyskane dyfraktogramy rentgenowskie dla serii siedmiu przygotowanych
+%  próbek. Kolor czerwony oznacza natężenie promieniowania w funkcji kąta $2\theta$ obliczone w programie FullProf, punktami oznaczono
+%  dane pomiarowe uzyskane w pomiarach dyfrakcyjnych. Krzywa niebieska stanowi natomiast różnicę pomiędzy natężeniami zmierzonymi
+%  oraz wynikającymi z obliczeń celem porównania ich zgodności.
+%  
+%  Pomiary dyfrakcji prezentują satysfakcjonującą zgodność z obliczeniami teoretycznymi. Pozwala to wnioskować o poprawnym
+%  ukształtowaniu się pożądanej struktury faz Lavesa, dla każdej z próbek. Głównym parametrem je opisującym jest stała
+%  sieci $a$, którą uzyskano dzięki dopasowaniu parametrów modelu do danych pomiarowych. Zestawienie wartości stałych sieciowych
+%  dla poszczególnego stopu zamieszczono w tabeli \ref{tab:stale_sieci}.
+%  
+%  \begin{table}[!ht]
+%    \centering
+%    \caption{Zestawienie wartości stałych sieciowych $a$ dla różnej ilości gadolinu w stopie $\left(Tb_{0.27}Dy_{0.73}\right)_{1-x}Gd_xFe_2$}
+%    \footnotesize
+%    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+%    \hline
+%      Domieszka \nit{Gd} & $x=0$ & $x=0.2$ & $x=0.4$ & $x=0.5$ & $x=0.6$ & $x=0.8$ & $x=1$ \\\hline
+%      Stała sieci $a$ & 7.34402 & 7.35232 & 7.36449 & 7.37533 & 7.37488 & 7.37556 & 7.40222 \\\hline
+%    \end{tabular}
+%    \label{tab:stale_sieci}
+%  \end{table}
+%  
+%\newpage
+%\newgeometry{hmargin={0.5cm, 0.5cm}, height=10.0in}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx00.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$}
+%  \label{fig:dif00}
+%\end{sidewaysfigure}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx02.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$}
+%  \label{fig:dif02}
+%\end{sidewaysfigure}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx04.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$}
+%  \label{fig:dif04}
+%\end{sidewaysfigure}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx05.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.135}\nit{Dy}_{0.365}\nit{Gd}_{0.5}\nit{Fe}_2$}
+%  \label{fig:dif05}
+%\end{sidewaysfigure}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx06.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.108}\nit{Dy}_{0.292}\nit{Gd}_{0.6}\nit{Fe}_2$}
+%  \label{fig:dif06}
+%\end{sidewaysfigure}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx08.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$}
+%  \label{fig:dif08}
+%\end{sidewaysfigure}
+%
+%\newpage
+%\begin{sidewaysfigure}[!ht]
+%  \centering
+%  \includegraphics[width=0.85\linewidth]{../img/dif/kkx10.jpg}
+%  \caption{Dyfraktogram rentgenowski próbki $\nit{Gd}\nit{Fe}_2$}
+%  \label{fig:dif10}
+%\end{sidewaysfigure}
+%
+%\restoregeometry
+%\newgeometry{vmargin={2.5cm,2.5cm}, height=10.0in}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/stale_sieci.pdf}
+%  \caption{Wykres parametru sieciowego $a$, objętości komórki elementarnej $V$ oraz objętości atomowej $V_{at}$ w funkcji
+%  domieszki gadolinu w stopie $\left(Tb_{0.27}Dy_{0.73}\right)_{1-x}Gd_xFe_2$}
+%  \label{fig:stale_sieci}
+%\end{figure}
+%
+%\newpage
+%\subsection{Magnetostrykcja poprzeczna i wzdłużna związków międzymetalicznych }%$\left(Tb_{0.27}Dy_{0.73}\right)_{1-x}Gd_xFe_2$}
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x00.pdf}
+%  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+%  objętościowa $\lambda_{V}$ związku międzymetalicznego $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$}
+%  \label{fig:mag00}
+%\end{figure}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x00_prime.pdf}
+%  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz 
+%   $\lambda_{V}$ związku międzymetalicznego $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$ względem natężenia pola magnetycznego $H$}
+%  \label{fig:mag00_prime}
+%\end{figure}
+%
+%\newpage
+%\begin{table}[!ht]
+%  \centering
+%  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki $\nit{Tb}_{0.27}\nit{Dy}_{0.73}\nit{Fe}_2$}
+%  \label{tab:x00_co}
+%  \begin{tabular}{|c|c|c|c|c|}
+%    \hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_0$ & 793.18 & 6.19 & 784.69 & 7.58\\\hline
+%    $k$ & -1.403 & 0.018 & -1.190 & 0.019\\\hline
+%    $n$ & 2.059 & 0.034 & 1.917 & 0.160\\\hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_1$ & 9.48 & 3.60 & 6.7288 & 3.197\\\hline
+%    $\lambda_2$ & -552.73 & 6.40 & -554.04 & 8.79\\\hline
+%    $k$ & 2.677 & 0.034 & 2.732 & 0.048\\\hline
+%    $n$ & 2.384 & 0.0710 & 2.133 & 0.069\\\hline
+%  \end{tabular}
+%\end{table}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x02.pdf}
+%  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+%  objętościowa $\lambda_{V}$ związku międzymetalicznego $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$}
+%  \label{fig:mag02}
+%\end{figure}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x02_prime.pdf}
+%  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz
+%   $\lambda_{V}$ związku międzymetalicznego $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$ względem natężenia pola magnetycznego $H$}
+%  \label{fig:mag02_prime}
+%\end{figure}
+%
+%\newpage
+%\begin{table}[!ht]
+%  \centering
+%  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+%  $\nit{Tb}_{0.216}\nit{Dy}_{0.584}\nit{Gd}_{0.2}\nit{Fe}_2$}
+%  \label{tab:x02_co}
+%  \begin{tabular}{|c|c|c|c|c|}
+%    \hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_0$ & 650.22 & 6.64 & 672.45 & 5.71\\\hline
+%    $k$ & 3.200 & 0.050 & 3.174 & 0.045\\\hline
+%    $n$ & 1.613 & 0.019 & 1.457 & 0.013\\\hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_1$ & 5.06 & 1.67 & 6.89 & 1.54\\\hline
+%    $\lambda_2$ & -402.84 & 6.97 & -382.25 & 5.95 \\\hline
+%    $k$ & 3.374 & 0.069 & 2.964 & 0.056\\\hline
+%    $n$ & 1.799 & 0.046 & 1.878 & 0.047\\\hline
+%  \end{tabular}
+%\end{table}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x04.pdf}
+%  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+%  objętościowa $\lambda_{V}$ związku międzymetalicznego $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$}
+%  \label{fig:mag04}
+%\end{figure}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x04_prime.pdf}
+%  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz
+%   $\lambda_{V}$ związku międzymetalicznego $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$ względem natężenia pola magnetycznego $H$}
+%  \label{fig:mag04_prime}
+%\end{figure}
+%
+%\newpage
+%\begin{table}[!ht]
+%  \centering
+%  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+%  $\nit{Tb}_{0.162}\nit{Dy}_{0.438}\nit{Gd}_{0.4}\nit{Fe}_2$}
+%  \label{tab:x04_co}
+%  \begin{tabular}{|c|c|c|c|c|}
+%    \hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_0$ & 571.86 & 11.02 & 676.55 & 11.09\\\hline
+%    $k$ & 4.437 & 0.130 & 5.724 & 0.160\\\hline
+%    $n$ & 1.454 & 0.021 & 1.189 & 0.010\\\hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_1$ & 3.64 & 1.97 & 15.60 & 2.07\\\hline
+%    $\lambda_2$ & -324.07& 16.01 & -410.46 & 25.31 \\\hline
+%    $k$ & 4.782 & 0.250 & 6.227 & 0.494\\\hline
+%    $n$ & 1.873 & 0.092 & 1.391 & 0.061\\\hline
+%  \end{tabular}
+%\end{table}
+%
+%\newpage
+
+%\newpage
+%\begin{table}[!ht]
+%  \centering
+%  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+%  $\nit{Tb}_{0.054}\nit{Dy}_{0.146}\nit{Gd}_{0.8}\nit{Fe}_2$}
+%  \label{tab:x08_co}
+%  \begin{tabular}{|c|c|c|c|c|}
+%    \hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_0$ & 261.12 & 7.71  & 263.82 & 16.19\\\hline
+%    $k$ & 9.622 & 0.455 & 10.027 & 1.020\\\hline
+%    $n$ & 1.104 & 0.011 & 1.058 & 0.021\\\hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_1$ & -3.15 & 0.27 & 0.18 & 0.29\\\hline
+%    $\lambda_2$ & -133.02 & 9.46 & -106.15 & 5.91 \\\hline
+%    $k$ & 8.662 & 0.727 & 6.255 & 0.436 \\\hline
+%    $n$ & 1.536 & 0.050 & 1.529 & 0.052 \\\hline
+%  \end{tabular}
+%\end{table}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x10.pdf}
+%  \caption{Magnetostrykcja wzdłużna $\lambda_{\parallel}$, poprzeczna $\lambda_{\perp}$, kształtu $\lambda_{\tau}$ oraz
+%  objętościowa $\lambda_{V}$ związku międzymetalicznego $\nit{Gd}\nit{Fe}_2$}
+%  \label{fig:mag10}
+%\end{figure}
+%
+%\newpage
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=\linewidth]{../img/magneto/x10_prime.pdf}
+%  \caption{Pochodna magnetostrykcji $\lambda_{\parallel}$, $\lambda_{\perp}$, $\lambda_{\tau}$ oraz $\lambda_{V}$ związku międzymetalicznego
+%   $\nit{Gd}\nit{Fe}_2$ względem natężenia pola magnetycznego $H$}
+%  \label{fig:mag10_prime}
+%\end{figure}
+%
+%\newpage
+%\begin{table}[!ht]
+%  \centering
+%  \caption{Zestawienie parametrów dopasowania funkcji Hilla do pomiarów magnetostrykcji próbki
+%   $\nit{Gd}\nit{Fe}_2$}
+%  \label{tab:x10_co}
+%  \begin{tabular}{|c|c|c|c|c|}
+%    \hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja wzdłużna $\lambda_{\parallel}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_0$ & 68.63 & 1.90  & 64.98 & 1.65\\\hline
+%    $k$ & 1.902 & 0.113 & 1.651 & 0.089\\\hline
+%    $n$ & 1.169 & 0.047 & 1.242 & 0.052\\\hline
+%    \multicolumn{5}{|c|}{Magnetostrykcja poprzeczna $\lambda_{\perp}$}\\\hline
+%    \multirow{2}{*}{Parametr} & \multicolumn{2}{c}{Rosnące pole $H$} & \multicolumn{2}{|c|}{Malejące pole $H$}\\
+%    \cline{2-5}
+%    & Wartość & Niepewność & Wartość & Niepewność \\\hline
+%    $\lambda_1$ & 0.34 & 0.42 & 0.96 & 0.67\\\hline
+%    $\lambda_2$ & -33.50 & 1.76 & -43.62 & 6.85 \\\hline
+%    $k$ & 3.670 & 0.246 & 4.967 & 1.481 \\\hline
+%    $n$ & 1.471 & 0.103 & 0.999 & 0.115 \\\hline
+%  \end{tabular}
+%\end{table}
+%
+%\newpage
+%\begin{appendices}
+%N/A  
+%\end{appendices}
+%
+%
+%\newpage
+%\begin{thebibliography}{10}
+%%\addcontentsline{toc}{section}{Literatura}
+% \small
+% \bibitem{joule}
+% J.P. Joule,
+% \emph{On the Effects of Magnetism upon the Dimensions of Iron and Steel Bars}.
+% ``The London, Edinburgh and Dublin Philosophical Magazine and Journal of Science. Third Series''.
+% vol. 30, s. 76–87, 1847. Taylor \& Francis (ang.).
+% 
+% \bibitem{terd}
+% A. E. Clark,
+% \emph{Ferromagnetic Materials}, ed. E. P. Wohlfarth, Amsterdam, 1980. 
+% 
+% \bibitem{thoelke}
+% J. B. Thoelke,
+% \emph{Magnetiziation and Magnetostriction in Highly Magnetostrictive Materials}, Ames Laboratory, Iowa, 1993. 
+% 
+% \bibitem{chika}
+%  S. Chikazumi,
+%  S. H. Charap,
+%  \emph{Physics of Magnetism}, John Wiley and Sons, Nowy Jork, 1964.
+%  
+%  \bibitem{ms_metali}
+%  R. C. Hall,
+%  \emph{Single Crystal Anisotropy and Magnetostriction Constants of Several Ferromagnetic Materials Including Alloys of NiFe, SiFe, AlFe, CoNi, and CoFe}, J. Appl. Phys. 30, nr 6, 816-19, 1959.
+%  
+%  \bibitem{nife}
+%  C. M. Davis,
+%  H. H. Helms,
+%  S. F. Ferebee,
+%  \emph{Dynamic Magnetostrictive Properties of Ni-Fe Alloys}, J. Acoust. Soc. Am. 29, nr 4, 431-4, 1957.
+%  
+%  \bibitem{sc_dys}
+%  S. Legvold,
+%  J. Alstad,
+%  J. Rhyne,
+%  \emph{Giant Magnetostriction in Dysprosium and Holmium Single Crystals}, Phys. Rev. Letts. 10, 509, 1963.
+%  
+%  \bibitem{high_curie}
+%  James R. Cullen,
+%  Arthur E. Clark,
+%  \emph{Magnetostriction and structural distortion in rare-earth intermetallics}, Phys. Rev. B 15, 4510, 1977.
+%  
+%  \bibitem{piec}
+%  M. Onak,
+%  J. Pszczoła,
+%  \emph{Synthesis of rare earth – transition metal compounds using arc melting},
+%  In XXVIII School of Materials Engineering, Kraków – Szczawnica, 2000.
+%  
+%  \bibitem{okamoto}
+%  H. Okamoto,
+%  \emph{Supplemental Literature Review of Binary Phase Diagrams: Bi-Ce, Bi-Er, C-Ce, C-La, C-Pr, Cd-I, Cr-Cu, Cu-Er, Er-Sb, F-Sm, F-Yb, and Fe-Gd},
+%  Journal of Phase Equilibria and Diffusion, 34:350–362, 2013.
+%  
+%  \bibitem{nist}
+%  \emph{NIST Standard Reference Database 128}, NIST, Physical Measurement Laboratory, 2005.
+%  
+%  \bibitem{iuc}
+%  \emph{International Tables for Crystallography}, Vol. A, Space-group symmetry, 5th online ed., edited by: P. Paufler:
+%  International Union of Crystallography, 2006.
+%  
+%  %% wartości stałej sieci dla GdFe2 7.382022624 A
+%  %\bibitem{a_10ref} 
+%  %K. N. R. Taylor,
+%  %\emph{Intermetallic rare-earth compounds}, Advances in Physics, Volume 20, Issue 87, 1971.
+%  
+%  %% wartości stałej sieci dla Ter-D 7.3 A
+%  \bibitem{a_00ref} 
+%  R. F. Quattrone,
+%  J. B. Berman,
+%  J C. Trovillion,
+%  C. A. Feickert,
+%  J. M. Kamphaus,
+%  S. R. White,
+%  V. Giurgiutiu,
+%  G. L. Cohen,
+%  \emph{Investigation of Terfenol-D for Magnetostrictive Tagging of Fiber-Reinforced Polymer Composites},
+%  US Army Corps of Engineers, Engineer Research and Development Center, 2000.
+%  
+%  
+%\end{thebibliography}
+
+
+
+\newpage
+%\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\newpage
+%\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\end{document}
